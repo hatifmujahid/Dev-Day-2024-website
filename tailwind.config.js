@@ -12,7 +12,13 @@ export default {
         skyblue: "#9BD7E6",
         purple: "#ABAAD7",
         orange: "#FE9F85",
+        cardBlue: "#9BD7E6",
+        cardOrange: "#EECCDC",
+        cardPink: "#EDD0FF"
       },
+      scale: {
+        '250': '2.5',
+      }
     },
   },
   plugins: [],
