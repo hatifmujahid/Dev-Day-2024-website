@@ -3,6 +3,7 @@ import HeroSection from "./HeroSection";
 import Nav from "./Nav";
 import Sponser from "./Sponser";
 import CompCard from "./CompCard";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
           link="youtube.com"
         />
       </div> */}
+      <Footer/>
     </>
   );
 };
