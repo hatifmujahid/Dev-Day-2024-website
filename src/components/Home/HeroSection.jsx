@@ -1,6 +1,6 @@
 import React from "react";
-import banner from "../assets/heroBanner.png";
-import bannerRight from "../assets/heroBanner2.png";
+import banner from "../../assets/heroBanner.png";
+import bannerRight from "../../assets/heroBanner2.png";
 
 const HeroButton = ({ text, bgColor, link }) => {
   const colorClasses = {
@@ -44,7 +44,7 @@ const HeroSection = () => {
       <div className="flex  mt-12 md:mt-18 flex-col gap-6 md:flex-row">
         <HeroButton text="Become a Sponsor!" bgColor="purple" link="/" />
         <div className="border border-[#000000]/[0.2] w-3/4 mx-auto md:w-0.5 md:h-12 h-0.5"></div>
-        <HeroButton text="Register Now!"  bgColor="skyblue" link="/" />
+        <HeroButton text="Register Now!"  bgColor="skyblue" link="/register" />
         <div className="border border-[#000000]/[0.2] w-3/4 mx-auto md:w-0.5 md:h-12 h-0.5"></div>
         <HeroButton text="Become an Ambassador!" bgColor="orange" link="/" />
       </div>

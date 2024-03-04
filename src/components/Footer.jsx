@@ -5,7 +5,7 @@ const social_links = [
   {
     link: "https://www.instagram.com/",
     imageURL:
-      "https://media.licdn.com/dms/image/C4E0BAQFt6KqGwvGCzg/company-logo_200_200/0/1652805738201/instagram_logo?e=2147483647&v=beta&t=s4VLM-VFtWKuIZlbNHKaVDnkhrNXJ18MbdqGq2sO-yI",
+      "https://icons8.com/icon/32309/instagram",
   },
   {
     link: "https://linkedin.com/",
@@ -21,15 +21,12 @@ const Footer = () => {
   return (
     <>
       <div>
-        <div className="flex justify-center">
-          <div className="w-3/4 border-t border-gray-300 mt-8"></div>
-        </div>
         {/* <footer className="bg-white-800 text-black ">
        
           <img src={Logo} alt="Logo" />
         </footer> */}
 
-        <footer className="bg-white dark:bg-gray-900">
+        <footer className="">
           <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 ">
             <div className="md:flex md:justify-between">
               <div className="mb-6 md:mb-0 ml-9">
@@ -39,10 +36,10 @@ const Footer = () => {
               </div>
               <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 mt-9">
                 <div>
-                  <h2 className="mb-6 text-lg font-bold text-gray-900 uppercase dark:text-white">
+                  <h2 className="mb-6 text-lg font-bold text-black uppercase">
                     Our Events
                   </h2>
-                  <ul className="text-gray-500 dark:text-gray-400 font-medium text-lg">
+                  <ul className="text-black font-medium text-lg">
                     <li className="mb-4">
                       <a href="https://flowbite.com/" className="hover:underline">
                         Coders Cup
@@ -67,7 +64,7 @@ const Footer = () => {
                   </ul>
                 </div>
                 <div>
-                  <h2 className=" text-sm font-bold text-gray-900 uppercase dark:text-white text-lg ml-6">
+                  <h2 className=" text-sm font-bold text-black uppercase text-lg ml-6">
                     Connect with Us
                   </h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium text-lg flex sm:justify-start sm:mt-0">
@@ -76,7 +73,7 @@ const Footer = () => {
                         
                         <a
                           href={item.link}
-                          className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-2"
+                          className="text-gray-500 hover:text-black dark:hover:text-white ms-2"
                           target="_blank"
                         >
                           <img src={item.imageURL} alt="image" className="w-8 h-8 img1"/>
@@ -88,16 +85,15 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-            <div className="sm:flex sm:items-center sm:justify-between">
-              <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            <hr className="my-4 border-gray-200 sm:mx-auto dark:border-gray-400" />
+
+              <h2 className="text-sm text-black text-center border mx-auto">
                 © 2024{" "}
                 <a href="https://devday23.tech/index.html" className="hover:underline">
                   ACM NUCES™
                 </a>
                 . All Rights Reserved.
-              </span>
-            </div>
+              </h2>
           </div>
         </footer>
       </div>

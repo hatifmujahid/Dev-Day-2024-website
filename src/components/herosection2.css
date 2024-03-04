@@ -1,0 +1,50 @@
+/* .image1{
+    z-index: 10;
+}
+.image2{
+    z-index: -2;
+} */
+
+.mainh1{
+    color: #088097;
+}
+
+.form-radio{
+    color: #003149;
+}
+
+.circle {
+    color: #003149;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px dashed black;
+}
+
+
+
+h1.circle {
+    position: relative;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+/* @media screen and (max-width: 900px) {
+    .part1 {
+        display: block;
+        text-align: center;
+    }
+
+    .mainh1 {
+        margin-bottom: 20px; 
+    }
+
+    .part1 img {
+        display: block;
+        margin: 0 auto; 
+    }
+} */
