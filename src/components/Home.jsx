@@ -1,24 +1,22 @@
 import react from "react";
-import HeroSection from "./HeroSection";
+import HeroSection from "./Home/HeroSection";
 import Nav from "./Nav";
 import Sponser from "./Sponser";
-import CompCard from "./CompCard";
+import CompCard from "./Home/CompCard";
 import Footer from "./Footer";
+import CsCompetition from "./Home/CsCompetition";
+import ElectricalCompetition from "./Home/ElectricalCompetition";
+import Register from "./Register";
 
 const Home = () => {
   return (
     <>
-      <Nav />
       <HeroSection />
-      {/* <div className="w-screen h-screen flex items-center justify-center">
-        <CompCard
-          title="Title goes here"
-          description="Lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor"
-          color="pink"
-          link="youtube.com"
-        />
-      </div> */}
-      <Footer/>
+      <CsCompetition/>
+      <div className="bg-gradient-to-b from-[#FFFFFF] to-[#9BD7E6]">
+        <ElectricalCompetition/>
+        <Footer />
+      </div>
     </>
   );
 };
