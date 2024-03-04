@@ -220,10 +220,10 @@ const Register = () => {
         <h1 className="text-center text-2xl font-bold mb-4 text-[#003149]">
           SELECT A COMPETITION
         </h1>
-        <div className="flex justify-center">
+        <div className="flex justify-center border">
           <select
             id="competitions"
-            className="-[3px] bg-white -[#003149] text-[#003149] focus:ring-[#003149] focus:-[#003149] w-full p-2.5  placeholder-[#003149]"
+            className="-[3px] bg-white -[#003149] text-[#003149] focus:ring-[#003149] focus:-[#003149] w-full p-2.5  placeholder-[#003149] "
           >
             <option value="US">Web Dev</option>
             <option value="CA">App dev</option>

@@ -16,7 +16,7 @@ const Navbar = () => {
     { id: 1, text: "Home", href: "/" },
     { id: 2, text: "About Us", href: "/about" },
     { id: 3, text: "ACM", href: "/" },
-    { id: 4, text: "Our Team", src: "/" },
+    { id: 4, text: "Our Team", src: "/about" },
     { id: 5, text: "Events", href: "/" },
   ];
 
