@@ -18,7 +18,7 @@ const ExComCard = ({ imgUrl, title, name }) => {
         lg:p-8
     `}
     >
-      <img src={imgUrl} alt={`${title} ${name}`} />
+      <img className="object-coer" src={imgUrl} alt={`${title} ${name}`} />
       <div
         className={`
         bg-[#FFFFFF]

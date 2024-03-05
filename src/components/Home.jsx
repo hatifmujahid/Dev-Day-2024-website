@@ -5,6 +5,7 @@ import Sponser from "./Sponser";
 import CompCard from "./CompCard";
 import Footer from "./Footer";
 import ExComCard from "./exComCard";
+import CoreCard from "./CoreCard"
 
 import sample from "../assets/sample.jpeg";
 
@@ -20,10 +21,15 @@ const Home = () => {
           color="pink"
           link="youtube.com"
         /> */}
-        <ExComCard 
+        {/* <ExComCard 
           imgUrl={sample}
           title="Wizard"
           name="Walter"
+        /> */}
+        <CoreCard 
+          imgUrl={sample}
+          title="Title"
+          name="Full Name"
         />
       </div>
     </>
