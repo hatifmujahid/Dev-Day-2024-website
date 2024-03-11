@@ -67,12 +67,12 @@ const CsCompetition = () => {
 
   return (
     <div className="max-w-screen-2xl m-auto pl-12 pr-12 ">
-      <div className="border-b border-gray-300 w-full mb-8"></div>
+      <div className="w-full mb-8"></div>
       <h1 className="pl-8 pb-8 text-primary font-extrabold text-5xl">
         COMPUTER SCIENCE
       </h1>
 
-      <div className="border relative overflow-x-auto sm:overflow-x-hidden  ">
+      <div className="relative overflow-x-auto sm:overflow-x-hidden  ">
         <div className="flex flex-nowrap  md:flex-wrap  p-8 gap-16">
             {compData.map((comp) => (
             <CompCard

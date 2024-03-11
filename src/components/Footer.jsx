@@ -85,9 +85,9 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <hr className="my-4 border-gray-200 sm:mx-auto dark:border-gray-400" />
+            <hr className="my-4 sm:mx-auto" />
 
-              <h2 className="text-sm text-black text-center border mx-auto">
+              <h2 className="text-sm text-black text-center mx-auto">
                 © 2024{" "}
                 <a href="https://devday23.tech/index.html" className="hover:underline">
                   ACM NUCES™

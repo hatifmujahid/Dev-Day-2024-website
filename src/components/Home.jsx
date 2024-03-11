@@ -14,7 +14,7 @@ const Home = () => {
       <HeroSection />
       <CsCompetition/>
       <div className="bg-gradient-to-b from-[#FFFFFF] to-[#9BD7E6]">
-        <ElectricalCompetition/>
+        {/* <ElectricalCompetition/> */}
         <Footer />
       </div>
     </>
