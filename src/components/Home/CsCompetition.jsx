@@ -4,65 +4,83 @@ import CompCard from "./CompCard";
 const CsCompetition = () => {
   const compData = [
     {
-      title: "Code Wars",
+      title: "Web Development",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-      title: "Code Wars",
+      title: "Database Design",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-      title: "Code Wars",
+      title: "Speed Programming",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-      title: "Code Wars",
+      title: "Code Sprint",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-      title: "Code Wars",
+      title: "App Development",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-      title: "Code Wars",
+      title: "Capture the flag",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-      title: "Code Wars",
+      title: "UI/UX Design",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-      title: "Code Wars",
+      title: "Speed Debugging",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-      title: "Code Wars",
+      title: "Data Visualization",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-        title: "Code Wars",
+        title: "Data Science",
         description: "A competitive coding event where participants are given",
         link: "https://www.google.com/",
         color: "blue",
       },
+      {
+        title: "PsuedoWar",
+        description: "A competitive coding event where participants are given",
+        link: "https://www.google.com/",
+        color: "blue",
+      },
+      {
+        title: "SyncOS Challenge",
+        description: "A competitive coding event where participants are given",
+        link: "https://www.google.com/",
+        color: "blue",
+      },
+      {
+        title: "Code in Dark",
+        description: "A competitive coding event where participants are given",
+        link: "https://www.google.com/",
+        color: "blue",
+      },      
   ];
 
   return (
