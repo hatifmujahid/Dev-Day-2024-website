@@ -4,75 +4,93 @@ import CompCard from "./CompCard";
 const CsCompetition = () => {
   const compData = [
     {
-      title: "Code Wars",
+      title: "Web Development",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-      title: "Code Wars",
+      title: "Database Design",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-      title: "Code Wars",
+      title: "Speed Programming",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-      title: "Code Wars",
+      title: "Code Sprint",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-      title: "Code Wars",
+      title: "App Development",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-      title: "Code Wars",
+      title: "Capture the flag",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-      title: "Code Wars",
+      title: "UI/UX Design",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-      title: "Code Wars",
+      title: "Speed Debugging",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-      title: "Code Wars",
+      title: "Data Visualization",
       description: "A competitive coding event where participants are given",
       link: "https://www.google.com/",
       color: "blue",
     },
     {
-        title: "Code Wars",
+        title: "Data Science",
         description: "A competitive coding event where participants are given",
         link: "https://www.google.com/",
         color: "blue",
       },
+      {
+        title: "PsuedoWar",
+        description: "A competitive coding event where participants are given",
+        link: "https://www.google.com/",
+        color: "blue",
+      },
+      {
+        title: "SyncOS Challenge",
+        description: "A competitive coding event where participants are given",
+        link: "https://www.google.com/",
+        color: "blue",
+      },
+      {
+        title: "Code in Dark",
+        description: "A competitive coding event where participants are given",
+        link: "https://www.google.com/",
+        color: "blue",
+      },      
   ];
 
   return (
     <div className="max-w-screen-2xl m-auto pl-12 pr-12 ">
-      <div className="border-b border-gray-300 w-full mb-8"></div>
+      <div className="w-full mb-8"></div>
       <h1 className="pl-8 pb-8 text-primary font-extrabold text-5xl">
         COMPUTER SCIENCE
       </h1>
 
-      <div className="border relative overflow-x-auto sm:overflow-x-hidden  ">
+      <div className="relative overflow-x-auto sm:overflow-x-hidden  ">
         <div className="flex flex-nowrap  md:flex-wrap  p-8 gap-16">
             {compData.map((comp) => (
             <CompCard
