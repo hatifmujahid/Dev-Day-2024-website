@@ -6,6 +6,7 @@ import Image2 from "../assets/about-2.png";
 import Image3 from "../assets/about-3.png";
 import Image4 from "../assets/about-4.png";
 import "../components/herosection2.css";
+import Excom from "../components/About/Excom";
 
 const About = () => {
   return (
@@ -15,6 +16,7 @@ const About = () => {
 
 
       {/* 1st hero-section */}
+      <>
       <div className="w-full part1 max-h-screen flex justify-between items-center xl:flex lg:flex sm:inline-block md:inline-block sm:text-center md:text-center mt-16">
         <div className="text-left w-2/5 ml-28 sm:w-full sm:flex sm:flex-col sm:ml-0 sm:text-center md:w-full md:flex md:flex-col md:ml-0 md:text-center lg:w-2/5 lg:flex lg:flex-col lg:ml-28 lg:text-start">
         <h1 className="mainh1 font-extrabold text-8xl text-600 sm:mb-8 md:mb-8">ABOUT US</h1>
@@ -36,8 +38,9 @@ const About = () => {
           truly unique benefits.
         </p>
         </div>
-        <img src={Image1} alt="Image" className="sm:mx-auto md:mx-100 lg:mx-0 xl:mx-0" />
+        <img src={Image1} alt="Image" className="hidden md:block sm:mx-auto md:mx-100 lg:mx-0 xl:mx-0" />
       </div>
+      </>
 
 
 
@@ -51,8 +54,6 @@ const About = () => {
             </div>
         </div>
         {/* space for excom member cards */}
-
-
 
 
 
