@@ -1,70 +1,184 @@
-import React, { useState } from "react";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import logo from "../assets/logo.png";
+import React, { useState, useEffect } from 'react';
+import { AiOutlineMenu } from 'react-icons/ai';
+import logo from '../assets/logo.png';
+import { motion, AnimatePresence, MotionConfig } from 'framer-motion';
 
 const Navbar = () => {
-  // State to manage the navbar's visibility
   const [nav, setNav] = useState(false);
+  const [bgColor, setBgColor] = useState('transparent');
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [showNavbar, setShowNavbar] = useState(true);
 
-  // Toggle function to handle the navbar's display
   const handleNav = () => {
     setNav(!nav);
   };
 
-  // Array containing navigation items
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > 50) {
+      setBgColor('#9bd7e6cc'); // Change to your desired color when scrolled
+    } else {
+      setBgColor('transparent');
+    }
+
+    if (currentScrollY > lastScrollY) {
+      // Scrolling down
+      setShowNavbar(false);
+    } else {
+      // Scrolling up
+      setShowNavbar(true);
+    }
+
+    setLastScrollY(currentScrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
+
   const navItems = [
-    { id: 1, text: "Home", href: "/" },
-    { id: 2, text: "About Us", href: "/about" },
-    { id: 3, text: "ACM", href: "/" },
-    { id: 4, text: "Our Team", src: "/about" },
-    { id: 5, text: "Events", href: "/" },
+    { id: 1, text: 'Home', href: '/' },
+    { id: 2, text: 'About Us', href: '/about' },
+    { id: 3, text: 'Register', href: '/register' },
   ];
 
   return (
-    <div className="fixed w-full flex justify-between items-center h-20 mx-auto px-6 md:px-12">
-      <div>
+    <div
+      className={`fixed w-full flex justify-between items-center h-16 mx-auto px-6 md:px-12 z-50 transition-all duration-300 ${showNavbar ? 'top-0' : '-top-20'}`}
+      style={{ backgroundColor: bgColor }}
+    >
+      <a href='/'>
         <img src={logo} alt="logo" className="w-20 z-12" />
-      </div>
+      </a>
 
       <ul className="hidden md:flex">
         {navItems.map((item) => (
-          <li
-            key={item.id}
-            className="text-black p-2 mx-4 cursor-pointer"
-          >
-            <a href={item.href} alt={item.href}>
-              {item.text}
-            </a>
+          <li key={item.id} className="text-black p-2 mx-4 cursor-pointer">
+            <a href={item.href}>{item.text}</a>
           </li>
         ))}
       </ul>
 
-      <div onClick={handleNav} className="block md:hidden z-10">
-        {nav ? (
-          <AiOutlineClose className="text-black" size={20} />
-        ) : (
-          <AiOutlineMenu size={20} className="text-black" />
-        )}
+      <div className="block md:hidden z-10">
+        <motion.button
+          initial="hide"
+          animate={nav ? 'show' : 'hide'}
+          onClick={handleNav}
+          className="flex flex-col space-y-1 relative z-10"
+        >
+          <motion.span
+            variants={{
+              hide: {
+                rotate: 0,
+              },
+              show: {
+                rotate: 45,
+                y: 9,
+              },
+            }}
+            className="w-8 bg-white h-1 block rounded-full"
+          ></motion.span>
+          <motion.span
+            variants={{
+              hide: {
+                opacity: 1,
+              },
+              show: {
+                opacity: 0,
+              },
+            }}
+            className="w-8 bg-white h-1 block rounded-full"
+          ></motion.span>
+          <motion.span
+            variants={{
+              hide: {
+                rotate: 0,
+              },
+              show: {
+                rotate: -45,
+                y: -6,
+              },
+            }}
+            className="w-8 bg-white h-1 block rounded-full"
+          ></motion.span>
+        </motion.button>
       </div>
 
       {/* Mobile Navigation Menu */}
-      <ul
-        className={
-          nav
-            ? "flex flex-col items-center justify-center fixed md:hidden right-0 top-0 w-full h-full bg-[#00A0BFBF] bg-opacity-45 ease-in-out duration-500"
-            : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
-        }
-      >
-        {/* Mobile Navigation Items */}
-        {navItems.map((item) => (
-          <li
-            key={item.id}
-            className="p-4 hover:text-black cursor-pointer border-gray-600"
+      <AnimatePresence>
+        {nav && (
+          <MotionConfig
+            transition={{
+              type: 'spring',
+              bounce: 0.3,
+            }}
           >
-            {item.text}
-          </li>
-        ))}
-      </ul>
+            <motion.div
+              key="mobile-nav"
+              variants={{
+                hide: {
+                  x: '100%',
+                  transition: {
+                    type: 'spring',
+                    bounce: 0.2,
+                    when: 'afterChildren',
+                    staggerChildren: 0.1, // Reduced stagger delay
+                  },
+                },
+                show: {
+                  x: '0%',
+                  transition: {
+                    type: 'spring',
+                    bounce: 0.2,
+                    when: 'beforeChildren',
+                    staggerChildren: 0.1, // Reduced stagger delay
+                  },
+                },
+              }}
+              initial="hide"
+              animate="show"
+              exit="hide"
+              className="fixed inset-0 bg-[#9bd7e6] p-6 flex flex-col justify-center space-y-10 lg:hidden"
+            >
+              <motion.ul
+                variants={{
+                  hide: {
+                    y: '25%',
+                    opacity: 0,
+                  },
+                  show: {
+                    y: '0%',
+                    opacity: 1,
+                  },
+                }}
+                className="list-none space-y-6"
+              >
+                {navItems.map((item) => (
+                  <motion.li
+                    key={item.id}
+                    variants={{
+                      hide: { opacity: 0, y: -20 },
+                      show: { opacity: 1, y: 0 },
+                    }}
+                    initial="hide"
+                    animate="show"
+                    exit="hide"
+                  >
+                    <a href={item.href} className="text-5xl font-semibold text-white">
+                      {item.text}
+                    </a>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </motion.div>
+          </MotionConfig>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

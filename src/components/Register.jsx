@@ -49,6 +49,9 @@ const InputBox = ({ label, name, type, value, handleChange, isRequired}) => {
 
 
 const Register = () => {
+
+    const [loading , setLoading] = useState(false)
+
     const competitionOptions = [
         'Web Dev',
         'App Dev',
@@ -58,12 +61,11 @@ const Register = () => {
 
     const competitionTypes = [
         'CS Competitions',
-        'EE Competitions',
         'Esports Competitions',
         'General Competitions',
     ]
 
-    const [competition, setCompetition] = useState('')
+    const [competition, setCompetition] = useState('Web Dev')
     const [competitionType, setCompetitionType] = useState('')
 
     const handleCompetitionChange = (e) => {
@@ -148,6 +150,7 @@ const Register = () => {
       };
   
       try {
+    setLoading(true)
           const response = await fetch('https://nuceskhi.acm.org/devdaynodeapi/addParticipant', {
               method: 'POST',
               headers: {
@@ -179,7 +182,9 @@ const Register = () => {
           }
       } catch (error) {
           console.error('Error submitting form:', error);
-      }
+      } finally {
+            setLoading(false)
+        }
     };
   
 
@@ -229,9 +234,8 @@ const Register = () => {
                                 </svg>
                             </div>
 
-                            <p className=" text-center">
-                                Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Numquam est nulla sed?
+                            <p className="p-4 text-center">
+                                Select the department of competitions you wish to participate in, for more information click here!
                             </p>
                         </div>
                     </div>
@@ -315,9 +319,8 @@ const Register = () => {
                                 </svg>
                             </div>
 
-                            <p className=" text-center">
-                                Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Numquam est nulla sed?
+                            <p className=" p-4 text-center">
+                                Select the competition you wish to participate in!
                             </p>
                         </div>
                     </div>
@@ -327,10 +330,10 @@ const Register = () => {
                     <h1 className="text-center text-2xl font-bold mb-4 text-[#003149]">
                         SELECT A COMPETITION
                     </h1>
-                    <div className="flex justify-center mx-6">
+                    <div className="flex border justify-center mx-6">
                         <select
                             id="competitions"
-                            className="-[3px] border bg-white -[#003149] text-[#003149] focus:ring-[#003149] focus:-[#003149] w-full p-3 pl-[20px] pr-[5px] placeholder-[#003149] appearance-none outline-[#003149]"
+                            className="-[3px] bg-white -[#003149] text-[#003149] focus:ring-[#003149] focus:-[#003149] w-full p-3 pl-[20px] pr-[5px] placeholder-[#003149] appearance-none outline-[#003149]"
                             value={competition}
                             onChange={handleCompetitionChange}
                         >
@@ -358,7 +361,7 @@ const Register = () => {
                         </div>
                     </div>
                 </div>
-                <div className="border hidden lg:flex lg:max-h-[505px] lg:items-center lg:flex-col z-0 lg:-mt-[110px]">
+                <div className="hidden lg:flex lg:max-h-[505px] lg:items-center lg:flex-col z-0 lg:-mt-[110px]">
                   <img src={svg1} alt="" />
                 </div>
 
@@ -388,9 +391,8 @@ const Register = () => {
                                 </svg>
                             </div>
 
-                            <p className=" text-center">
-                                Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Numquam est nulla sed?
+                            <p className=" p-4 text-center">
+                                Enter your team’s accurate information here.
                             </p>
                         </div>
                     </div>
@@ -497,31 +499,14 @@ const Register = () => {
                         <div className="">
                             <div className="flex flex-col  gap-4">
                                 <div class="flex justify-center ">
-                                    <svg
-                                        width="85"
-                                        height="85"
-                                        viewBox="0 0 231 231"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M115.25 79H80.875V62.5H140V77L117.875 98.125C129.875 100.125 141.375 106.375 141.375 122.75C141.375 139.375 129.375 151.5 109.875 151.5C94.125 151.5 83.25 145.25 75.75 136.375L89 123.75C95 130.5 101.25 134.25 110.125 134.25C117.375 134.25 122.5 130.125 122.5 123.5C122.5 116.25 116.375 112.25 105.375 112.25H97.375L94.375 100L115.25 79ZM176.637 150H156.387V130H176.637V150Z"
-                                            fill="#003149"
-                                        />
-                                        <circle
-                                            cx="115.5"
-                                            cy="115.5"
-                                            r="113"
-                                            stroke="black"
-                                            stroke-width="5"
-                                            stroke-dasharray="10 10"
-                                        />
-                                    </svg>
+                                <svg width="85" height="85" viewBox="0 0 231 231" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M122.875 61.875H139.125V115.5H150.875V131.125H139.125V150H120.75V131.125H78L74.875 117.5L122.875 61.875ZM120.75 115.5V88.25L97.5 115.5H120.75ZM185.182 150H164.932V130H185.182V150Z" fill="#003149"/>
+<circle cx="115.5" cy="115.5" r="113" stroke="black" stroke-width="5" stroke-dasharray="10 10"/>
+</svg>
                                 </div>
 
-                                <p className=" text-center">
-                                    Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. Numquam est nulla sed?
+                                <p className=" p-4 text-center">
+                                    Review your information and click submit to proceed for payment.
                                 </p>
                             </div>
                         </div>
@@ -531,10 +516,13 @@ const Register = () => {
                         <div className="hidden lg:block col-span-2"></div>
                         <button
                             onClick={handleSubmit}
-                            className="py-4 border min-h-10 font-medium  -[#003149] text-[#003149] transition-all shadow-[5px_5px_0px_black] hover:shadow-none hover:translate-x-[5px] hover:translate-y-[5px]"
+                            disabled={loading}
+
+                            className={`py-4 border min-h-10 font-medium text-[#003149] transition-all shadow-[5px_5px_0px_black]  hover:bg- hover:shadow-none hover:translate-x-[5px] hover:translate-y-[5px]`}
                         >
-                            <h1 className="text-2xl font-bold">SUBMIT</h1>
+                            <h1 className="text-2xl font-bold">{loading ? "Submitting..." : "SUBMIT"}</h1>
                         </button>
+
                     </div>
                 </div>
                 <div className="hidden lg:flex lg:ml-[250px] relative top-[-150px] z-0">
@@ -576,6 +564,9 @@ const Register = () => {
                             strokeDasharray="15 15"
                         />
                     </svg>
+
+
+
               </div>
 
             <div className="bg-gradient-to-b from-[#FFFFFF] to-[#9BD7E6]">
