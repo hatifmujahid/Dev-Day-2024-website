@@ -4,8 +4,9 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Nav from './components/Nav'
 import Home from './components/Home'
-import Register from './components/Register'
+import Register from './components/Register2'
 import About from  './components/About'
+import HomeHero from "./components/Home/HomeHero"
 import Footer from './components/Footer'
 import {
   BrowserRouter as Router,
@@ -13,6 +14,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom'
+import Ambassador from './components/Ambassador'
 
 function App() {
 
@@ -20,9 +22,11 @@ function App() {
     <Router>
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/ambassador" element={<Ambassador />} />
+        {/* <Route path="/register" element={<Register />} />
         <Route path="/about" element={<About />} />
+        <Route path="/" element={<HomeHero />} /> */}
+        
       </Routes>
     </Router>
   )
