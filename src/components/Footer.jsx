@@ -27,20 +27,20 @@ const Footer = () => {
         </footer> */}
 
         <footer className="">
-          <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 ">
+          <div className="mx-auto w-full  p-4 py-6 lg:py-8 bg-[#03071C] ">
             <div className="md:flex md:justify-between">
               <div className="mb-6 md:mb-0 ml-9">
               <a href="https://flowbite.com/" className="flex items-center md:flex md:justify-center">
   <img className="mx-auto md:mx-0" src={Logo} width={"250vw"} alt="Logo" />
 </a>
               </div>
-              <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 mt-9">
+              <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 mt-9 ">
                 <div>
-                  <h2 className="mb-6 text-lg font-bold text-black uppercase">
+                  <h2 className="mb-6 text-lg font-bold text-black uppercase text-white">
                     Our Events
                   </h2>
-                  <ul className="text-black font-medium text-lg">
-                    <li className="mb-4">
+                  <ul className="text-gray-400 font-medium text-lg">
+                    <li className="mb-4 ">
                       <a href="https://flowbite.com/" className="hover:underline">
                         Coders Cup
                       </a>
@@ -64,7 +64,7 @@ const Footer = () => {
                   </ul>
                 </div>
                 <div>
-                  <h2 className=" text-sm font-bold text-black uppercase text-lg ml-6">
+                  <h2 className=" text-sm font-bold text-black uppercase text-lg ml-6 text-white">
                     Connect with Us
                   </h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium text-lg flex sm:justify-start sm:mt-0">
@@ -85,9 +85,10 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <hr className="my-4 sm:mx-auto" />
+            <div className="border border-[#4C878F]/[0.2] h-0.5 mt-8 mb-3"></div>
 
-              <h2 className="text-sm text-black text-center mx-auto">
+
+              <h2 className="text-sm text-black text-center mx-auto text-gray-300">
                 © 2024{" "}
                 <a href="https://devday23.tech/index.html" className="hover:underline">
                   ACM NUCES™

@@ -3,7 +3,7 @@ import CompCard from "./CompCard";
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-const EEComp = () => {
+const CsComp = () => {
 
     const controls = useAnimation();
     const [ref, inView] = useInView();
@@ -100,7 +100,7 @@ const EEComp = () => {
   ];
 
   return (
-    <div className="mb-8 lg:mt-20 mx-8 sm:mx-16 md:mx-24 lg:mx-48 flex flex-col">
+    <div className="mb-8 lg:mt-20 mx-8 sm:mx-16 md:mx-24 lg:mx-48 border flex flex-col">
         <motion.div
                     ref={ref}
                     initial={{ opacity: 0, x: -100 }}
@@ -111,7 +111,7 @@ const EEComp = () => {
       </h1>
                 </motion.div>
 
-      <div className="flex flex-wrap justify-center ">
+      <div className="flex flex-wrap justify-center border">
       {
         compData.map((data) => {
             return (
@@ -128,10 +128,10 @@ const EEComp = () => {
             );
         })
       }
-      <div className="border border-[#4C878F]/[0.2] h-0.5 mt-8"></div>
+    
       </div>
     </div>
   );
 };
 
-export default EEComp;
+export default CsComp;
