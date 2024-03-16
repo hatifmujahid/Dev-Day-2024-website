@@ -587,8 +587,8 @@ const Ambassador = () => {
                             <>
                                 <UploadCloudIcon className="w-16 h-16 text-zinc-500 dark:text-zinc-400 " />
                                 <p className="text-gray-500 ">
-                                    Drag & drop some files here, or click to
-                                    select files
+                                    Drag & drop image here, or click to
+                                    select image
                                 </p>
                             </>
                         )}

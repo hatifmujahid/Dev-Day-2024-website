@@ -15,14 +15,15 @@ import {
   Navigate,
 } from 'react-router-dom'
 import Ambassador from './components/Ambassador'
+import ComingSoon from './components/ComingSoon'
 
 function App() {
 
   return (
     <Router>
-      <Nav />
       <Routes>
         <Route path="/ambassador" element={<Ambassador />} />
+        <Route path="/*" element={<ComingSoon />} />
         {/* <Route path="/register" element={<Register />} />
         <Route path="/about" element={<About />} />
         <Route path="/" element={<HomeHero />} /> */}
