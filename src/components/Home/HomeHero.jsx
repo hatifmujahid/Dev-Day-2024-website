@@ -52,7 +52,7 @@ const HeroSectionHome = () => {
                 <HeroButton
                     text="Become an Ambassador!"
                     bgColor="purple"
-                    link="/"
+                    link="/ambassador"
                 />
             </div>
         </div>

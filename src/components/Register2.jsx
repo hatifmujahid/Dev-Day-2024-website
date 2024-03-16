@@ -49,7 +49,6 @@ const InputBox = ({ label, name, type, value, handleChange, isRequired}) => {
 
 
 const Register = () => {
-
     const [loading , setLoading] = useState(false)
 
     const competitionOptions = [
@@ -190,10 +189,10 @@ const Register = () => {
 
     return (
         <div>
-            <div className="bg-[#03071C] bg-gradient-to-b from-[#0b4a5a38] to-[#03071C] flex justify-center items-center flex-col">
+            <div className="bg-[#03071C] flex justify-center items-center flex-col">
                 <div className=" part1 flex justify-space-evenly items-center xl:flex lg:flex sm:inline-block md:inline-block       sm:text-center md:text-center mt-16">
                     <div className="mt-12">
-                        <h1 className="mainh1 font-extrabold  text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-600 sm:mb-8 md:mb-8">
+                        <h1 className="mainh1 text-[#23B6DF] font-extrabold  text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-600 sm:mb-8 md:mb-8">
                             REGISTER NOW!
                         </h1>
                         <div className="scale-65 part2 mt-16 hidden sm:flex md:flex lg:inline xl:inline 2xl:inline">
@@ -244,12 +243,12 @@ const Register = () => {
                     />
 
                     <div className="sm:inline md:inline  m-4">
-                        <h2 className="mainh1 font-extrabold text-5xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-6xl text-600 sm:text-center md:text-center">
+                        <h2 className="mainh1 font-extrabold text-5xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-6xl text-600 sm:text-center md:text-center text-[#23B6DF] ">
                             Competitions
                         </h2>
                         <br />
 
-                        <div className="text-start sm:text-center sm:mb-16 md:mb-16 lg:mb-0 xl:mb-0 md:text-center lg:text-start xl:text-start">
+                        <div className="text-start sm:text-center mb-16 md:mb-22 md:text-center lg:text-start xl:text-start">
                             {competitionTypes.map((type) => {
                                 return (
                                     <>
@@ -323,7 +322,7 @@ const Register = () => {
                 </div>
             </div>
                 <div className="mx-auto  w-[900.21px] m-4 relative z-10">
-                    <h1 className="text-center text-2xl font-bold mb-4 text-[#003149]">
+                    <h1 className="text-center text-2xl font-bold mb-4 text-[#23B6DF]">
                         SELECT A COMPETITION
                     </h1>
                     <div className="flex border justify-center mx-6">
