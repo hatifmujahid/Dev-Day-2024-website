@@ -17,16 +17,73 @@ import {
     SelectLabel,
     SelectGroup,
 } from './ui/select'
+import {
+    CardTitle,
+    CardDescription,
+    CardHeader,
+    CardContent,
+    Card,
+} from './ui/card'
+import { useDropzone } from 'react-dropzone'
 import Footer from './Footer'
 
+
+function UploadCloudIcon(props) {
+    return (
+        <svg
+            {...props}
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
+            <path d="M12 12v9" />
+            <path d="m16 16-4-4-4 4" />
+        </svg>
+    )
+}
+
+
 const InputBox = ({ label, name, type, value, handleChange, isRequired }) => {
-    const isNumber = type === 'number';
-    const maxLength = type === 'cnic' ? 13 : (isNumber ? 11 : undefined);
+    const isNumber = type === 'number'
+    const maxLength = type === 'cnic' ? 15 : isNumber ? 12 : undefined
 
     const formatValue = (inputValue) => {
         // Remove all non-numeric characters if the input is a number
-        return isNumber ? inputValue.replace(/\D/g, '').substring(0, maxLength) : inputValue;
+        let result = inputValue
+        if (type === 'number') {
+            result = inputValue.replace(/\D/g, '').substring(0, maxLength)
+            if (result.length > 4) {
+                result = `${result.slice(0, 4)}-${result.slice(4)}`
+            }
+        }
+
+        if (type === 'cnic') {
+            result = inputValue.replace(/\D/g, '').substring(0, maxLength)
+            if (result.length > 5) {
+                // Check if there are at least 5 digits
+                if (result.length === 13) {
+                    // Check if there are exactly 13 digits
+                    result = `${result.slice(0, 5)}-${result.slice(
+                        5,
+                        12
+                    )}-${result.slice(12)}`
+                } else {
+                    result = `${result.slice(0, 5)}-${result.slice(5)}`
+                }
+            }
+        }
+
+        return result
     }
+
+    const transformedClass = value ? '-translate-y-8 ml-3 scale-75' : ''
 
     return (
         <div className="w-full">
@@ -46,9 +103,9 @@ const InputBox = ({ label, name, type, value, handleChange, isRequired }) => {
                     })}
                     maxLength={maxLength}
                 />
+
                 <label
-                    className={`z-0 select-none peer-focus:font-medium text-md absolute text-[#23b6df9f] duration-300 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#23B6DF] peer-placeholder-shown:scale-100 ${value ? "translate-y-0 scale-75 -translate-y-8" : "peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8 ml-3"}`}
-    
+                    className={`z-0 peer-focus:font-medium text-md absolute text-[#23B6DF] duration-300 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#23B6DF] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8 ml-3 ${transformedClass}`}
                 >
                     {label}
                 </label>
@@ -57,26 +114,65 @@ const InputBox = ({ label, name, type, value, handleChange, isRequired }) => {
     )
 }
 
-
-
 const Register = () => {
     const [loading, setLoading] = useState(false)
     const [competitionType, setCompetitionType] = useState('')
-    const [competition, setCompetition] = useState('Web Dev')
+    const [competition, setCompetition] = useState('')
 
-    const competitionOptions = [
-        'Web Dev',
-        'App Dev',
+    const [error, setError] = useState({
+        competition: false,
+        competitionType: false,
+        teamName: false,
+        member1: false,
+        cnic1: false,
+        email1: false,
+        phone1: false,
+        file: false,
+    })
+
+    const [files, setFiles] = useState(null)
+
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({
+        accept: 'image/png, image/jpeg',
+        maxFiles: 1,
+        onDrop: (acceptedFiles) => {
+            setFiles(acceptedFiles[0])
+        },
+    })
+
+    const csCompetitions = [
+        'Capture The Flag',
         'Speed Programming',
-        'Code Sprint',
+        'Database Design',
+        'Code in the Dark',
+        'PsuedoWar',
+        'Speed Debugging',
+        'UI/UX',
+        'Data Visualization',
+        'Web Development',
+        'Data Science',
+        'App Development',
+        'SyncOS',
     ]
+
+    const generalCompetitions = [
+        'Photography',
+        'Reels competition',
+        'Board games',
+        'Sketching',
+        'Podium game',
+        'Scavenger hunt',
+        'FSX',
+        'Battlestation',
+    ]
+
+    let competitionOptions = competitionType === 'CS Competitions' ? csCompetitions : generalCompetitions
 
     const competitionTypes = [
         'CS Competitions',
         'Esports Competitions',
         'General Competitions',
     ]
-
 
     const handleCompetitionChange = (e) => {
         setCompetition(e.target.value)
@@ -86,6 +182,7 @@ const Register = () => {
         setCompetitionType(e.target.value)
     }
 
+    const [teamName, setTeamName] = useState('')
     const [member1, setMember1] = useState('')
     const [member2, setMember2] = useState('')
     const [member3, setMember3] = useState('')
@@ -98,118 +195,138 @@ const Register = () => {
     const [cnic1, setCnic1] = useState('')
     const [cnic2, setCnic2] = useState('')
     const [cnic3, setCnic3] = useState('')
-
+    const [referenceCode, setReferenceCode] = useState('')
 
     const handleInput = (name, value) => {
-        console.log(name, value)
-        switch (name) {
-            case 'member1':
-                setMember1(value)
-                break
-            case 'member2':
-                setMember2(value)
-                break
-            case 'member3':
-                setMember3(value)
-                break
-            case 'email1':
-                setEmail1(value)
-                break
-            case 'email2':
-                setEmail2(value)
-                break
-            case 'email3':
-                setEmail3(value)
-                break
-            case 'phone1':
-                setPhone1(value)
-                break
-            case 'phone2':
-                setPhone2(value)
-                break
-            case 'phone3':
-                setPhone3(value)
-                break
-            case 'cnic1':
-                setCnic1(value)
-                break
-            case 'cnic2':
-                setCnic2(value)
-                break
-            case 'cnic3':
-                setCnic3(value)
-                break
-            default:
-                break
+        console.log(name, value);
+
+        if (name === 'competitionType') {
+            setCompetitionType(value);
+            setCompetition('');
         }
-    }
-
+        const setters = {
+            member1: setMember1,
+            member2: setMember2,
+            member3: setMember3,
+            email1: setEmail1,
+            email2: setEmail2,
+            email3: setEmail3,
+            phone1: setPhone1,
+            phone2: setPhone2,
+            phone3: setPhone3,
+            cnic1: setCnic1,
+            cnic2: setCnic2,
+            cnic3: setCnic3,
+            teamName: setTeamName,
+            referenceCode: setReferenceCode,
+        };
+    
+        const setter = setters[name];
+        if (setter) {
+            setter(value);
+        }
+    };
+    
     const handleSubmit = async () => {
-
+        
         if (competition === '' || competitionType === '') {
             alert('Please select a competition')
+            setError({ ...error, competition: true, competitionType: true })
             return
         }
 
         if (member1 === '' || email1 === '' || phone1 === '' || cnic1 === '') {
             alert('Please fill in the required fields')
+            setError({
+                ...error,
+                member1: true,
+                email1: true,
+                phone1: true,
+                cnic1: true,
+            })
             return
         }
+
+        setCnic1((cnic) => cnic.replace(/-/g, ''))
+        setCnic2((cnic) => cnic.replace(/-/g, ''))
+        setCnic3((cnic) => cnic.replace(/-/g, ''))
+
+        console.log(cnic1)
+        setPhone1((e) => e.replace(/-/g, ''))
+        setPhone2((e) => e.replace(/-/g, ''))
+        setPhone3((e) => e.replace(/-/g, ''))
 
         const participantData = {
             Competition: competition,
             Competition_type: competitionType,
-            Team_type: 'Team',
+            Team_Name: teamName,
             Leader_name: member1,
             Leader_email: email1,
             Leader_whatsapp_number: phone1,
             Leader_cnic: cnic1,
-            member1_name: member2,
-            member1_email: email2,
-            member1_whatsapp_number: phone2,
-            member1_cnic: cnic2,
-            member2_name: member3,
-            member2_email: email3,
-            member2_whatsapp_number: phone3,
-            member2_cnic: cnic3,
+            mem1_name: member2,
+            mem1_email: email2,
+            mem1_whatsapp_number: phone2,
+            mem1_cnic: cnic2,
+            mem2_name: member3,
+            mem2_email: email3,
+            mem2_whatsapp_number: phone3,
+            mem2_cnic: cnic3,
+            reference_code: referenceCode,
+            
         }
 
         try {
-            setLoading(true)
-            const response = await fetch(
-                'http://localhost:5000/api/addParticipant',
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(participantData),
+            const reader = new FileReader()
+            reader.readAsDataURL(files)
+            reader.onload = async () => {
+                const base64Image = reader.result
+                participantData.image = base64Image
+
+                setLoading(true)
+                const response = await fetch(
+                    'http://localhost:5000/addParticipant',
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(participantData),
+                    }
+                )
+
+                if (response.ok) {
+                    const result = await response.json()
+                    console.log('Submitted successfully:', result)
+                    alert('Form submitted successfully')
+
+                    setMember1('')
+                    setMember2('')
+                    setMember3('')
+                    setEmail1('')
+                    setEmail2('')
+                    setEmail3('')
+                    setPhone1('')
+                    setPhone2('')
+                    setPhone3('')
+                    setCompetition('')
+                    setCompetitionType('')
+                    setTeamName('')
+                } else {
+                    console.log(response)
+                    throw new Error('Failed to submit form')
                 }
-            )
-
-            if (response.ok) {
-                const result = await response.json()
-                console.log('Submitted successfully:', result)
-                alert('Form submitted successfully')
-
-                setMember1('')
-                setMember2('')
-                setMember3('')
-                setEmail1('')
-                setEmail2('')
-                setEmail3('')
-                setPhone1('')
-                setPhone2('')
-                setPhone3('')
-                setCompetition('')
-                setCompetitionType('')
-            } else {
-                throw new Error('Failed to submit form')
             }
         } catch (error) {
             console.error('Error submitting form:', error)
         } finally {
             setLoading(false)
+            setError({
+                competition: false,
+                competitionType: false,
+                teamName: false,
+                member1: false
+            })
         }
     }
 
@@ -284,7 +401,11 @@ const Register = () => {
                                         />
                                         <label
                                             for={type}
-                                            className={`font-medium sm:text-4xl md:text-4xl text-xl ${type === competitionType ? 'text-[#23B6DF]' : 'text-gray-500'} ml-2`}
+                                            className={`font-medium sm:text-4xl md:text-4xl text-xl ${
+                                                type === competitionType
+                                                    ? 'text-[#23B6DF]'
+                                                    : 'text-gray-500'
+                                            } ml-2`}
                                         >
                                             {type}
                                         </label>
@@ -347,10 +468,16 @@ const Register = () => {
                     SELECT A COMPETITION
                 </h1>
                 <div className="flex border justify-center mx-6">
-                    <Select className="bg-slate-800 border-none text-white">
+                    <Select 
+                        className="bg-slate-800 border-none text-white"
+                        onValueChange={(value) =>
+                            setCompetition(value)
+                        }    
+                    >
+                        
                         <SelectTrigger
                             aria-label="Social Media Activity"
-                            className="bg-slate-800 border-0 focus:ring-0"
+                            className="bg-slate-900 text-white focus:ring-0"
                         >
                             <SelectValue
                                 placeholder="Select Competition"
@@ -434,6 +561,17 @@ const Register = () => {
                 </div>
             </div>
 
+            <div className="flex flex-col gap-5 w-[270px] sm:w-[350px] md:w-[400px] lg:w-[65%] mx-auto">
+                <InputBox
+                    label="Team Name"
+                    name="teamName"
+                    type="text"
+                    value={teamName}
+                    isRequired={true}
+                    handleChange={handleInput}
+                />
+            </div>
+
             <div className="flex bg-[#03071C]  flex-col items-center gap-20 ">
                 <div className="flex flex-col gap-5 w-[270px] sm:w-[450px] md:w-[600px] lg:w-[75%] ">
                     <h1 className="text-3xl font-bold text-[#23B6DF]">
@@ -480,7 +618,7 @@ const Register = () => {
                         Member 1
                     </h1>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10">
-                    <InputBox
+                        <InputBox
                             label="Full Name"
                             name="member2"
                             type="text"
@@ -520,7 +658,7 @@ const Register = () => {
                         Member 2
                     </h1>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10">
-                    <InputBox
+                        <InputBox
                             label="Full Name"
                             name="member3"
                             type="text"
@@ -554,6 +692,70 @@ const Register = () => {
                         />
                     </div>
                 </div>
+
+                <div className="flex flex-col gap-5 w-[270px] sm:w-[350px] md:w-[400px] lg:w-[65%] mx-auto">
+                    <InputBox
+                        label="Reference Code (if any)"
+                        name="referenceCode"
+                        type="text"
+                        value={referenceCode}
+                        isRequired={false}
+                        handleChange={handleInput}
+                    />
+                </div>
+
+                <Card className="bg-gray-900 border-gray-700 w-full  md:w-4/6 mx-auto">
+                    <CardHeader>
+                        <CardTitle className="text-white">
+                            Upload Image
+                            <span className="text-red-700">
+                                {error.file && ' *'}{' '}
+                            </span>
+                        </CardTitle>
+                        <CardDescription>
+                            Drag and drop your image or click the button below
+                            to select file.
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent
+                        {...getRootProps()}
+                        className={`flex flex-col items-center justify-center border-2 m-1  ${
+                            isDragActive
+                                ? 'border-blue-500'
+                                : 'border-zinc-500 dark:border-zinc-800'
+                        } border-dashed rounded-lg space-y-3`}
+                    >
+                        <input {...getInputProps()} />
+
+                        {isDragActive ? (
+                            <p className="text-blue-500">
+                                Drop the file here...
+                            </p>
+                        ) : (
+                            <>
+                                <UploadCloudIcon className="w-16 h-16 text-zinc-500 dark:text-zinc-400 " />
+                                <p className="text-gray-500 ">
+                                    Drag & drop image here, or click to
+                                    select image
+                                </p>
+                            </>
+                        )}
+
+                        {files && files.type && files.name && (
+                            <div className="relative">
+                                <img
+                                    src={
+                                        files.type.startsWith('image/')
+                                            ? URL.createObjectURL(files)
+                                            : ''
+                                    }
+                                    alt={files.name}
+                                    className="rounded-md"
+                                />
+                            </div>
+                        )}
+                    </CardContent>
+                </Card>
 
                 <div className="lg:hidden  mb-2 flex justify-center gap-2 z-0">
                     <div className="">
