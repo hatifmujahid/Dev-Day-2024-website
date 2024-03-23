@@ -63,6 +63,7 @@ const Register = () => {
         'CS Competitions',
         'Esports Competitions',
         'General Competitions',
+        'Robotics Competitions',
     ]
 
     const [competition, setCompetition] = useState('Web Dev')

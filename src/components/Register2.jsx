@@ -67,7 +67,7 @@ const PaymentInfo = () => {
         number: "0169007900161339",
         iban: "PK94FAYS0169007900161339",
         bcode: "169",
-        address: "3-G Monawwar Plaza, C10 Markaz I-10, Islamabad."
+        bank_name: "Faysal Bank",
     }
 
     return (
@@ -90,8 +90,8 @@ const PaymentInfo = () => {
                 <div className=''>{info.bcode}</div>
             </div>
             <div className='flex flex-row gap-5'>
-                <div className='text-gray-400'>Address: </div>
-                <div className=''>{info.address}</div>
+                <div className='text-gray-400'>Bank Name: </div>
+                <div className=''>{info.bank_name}</div>
             </div>
         </div>
     )
@@ -182,6 +182,7 @@ const Register = () => {
         file: false,
     })
 
+
     const [files, setFiles] = useState(null)
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -214,8 +215,12 @@ const Register = () => {
         'Sketching',
         'Podium game',
         'Scavenger hunt',
-        'FSX',
-        'Battlestation',
+        'Fast Stock Exchange'
+    ]
+
+    const roboticsCompetitions = [
+        'Line Following Robot (LFR) Competition',
+        'Robo Soccer Competition'
     ]
 
     let competitionOptions = []
@@ -225,12 +230,16 @@ const Register = () => {
     else if (competitionType === "General Competitions") {
         competitionOptions = generalCompetitions
     }
+    else if(competitionType === "Robotics Competitions"){
+        competitionOptions = roboticsCompetitions;
+    }
     else {
         competitionOptions = []
     }
     const competitionTypes = [
         'CS Competitions',
         'General Competitions',
+        'Robotics Competitions'
     ]
 
     const handleCompetitionChange = (e) => {
