@@ -3,18 +3,18 @@ import Logo from "../assets/acm.svg";
 
 const social_links = [
   {
-    link: "https://www.instagram.com/",
+    link: "https://www.instagram.com/developersday/",
     imageURL:
       "https://icons8.com/icon/32309/instagram",
   },
   {
-    link: "https://linkedin.com/",
+    link: "https://www.linkedin.com/company/developersday/",
     imageURL:"https://iconape.com/wp-content/files/yd/367773/svg/logo-linkedin-logo-icon-png-svg.png"
-  },
-  {
-    link: "https://github.com/",
-    imageURL: "https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg"
   }
+  // {
+  //   link: "https://github.com/",
+  //   imageURL: "https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg"
+  // }
 ];
 
 const Footer = () => {
@@ -41,11 +41,11 @@ const Footer = () => {
                   </h2>
                   <ul className="text-gray-400 font-medium text-lg">
                     <li className="mb-4 ">
-                      <a href="https://flowbite.com/" className="hover:underline">
+                      <a href="https://www.acmcoderscup.online/" className="hover:underline">
                         Coders Cup
                       </a>
                     </li>
-                    <li className="mb-4">
+{/*                     <li className="mb-4">
                       <a
                         href="https://tailwindcss.com/"
                         className="hover:underline"
@@ -60,7 +60,7 @@ const Footer = () => {
                       >
                         Hackathon
                       </a>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
                 <div>

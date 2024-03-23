@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.clas{
+    background-color: hsla(193, 75%, 51%, 0.467);
+}
+
+.class{
+    background-color: #2e4f7cdb;
+}
