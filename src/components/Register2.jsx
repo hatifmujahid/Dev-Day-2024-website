@@ -74,6 +74,10 @@ const PaymentInfo = () => {
         <div className=' flex flex-col gap-1 md:gap-2 my-2 md:my-3 rounded-xl text-white p-3 md:p-5 bg-gray-800'>
             <div className='text-lg md:text-xl mb-5'>Pay Fees in the following Account and upload the receipt</div>
             <div className='flex flex-row gap-5'>
+                <div className='text-gray-400'>Bank Name: </div>
+                <div className=''>{info.bank_name}</div>
+            </div>
+            <div className='flex flex-row gap-5'>
                 <div className='text-gray-400'>Account Title: </div>
                 <div className=''>{info.title}</div>
             </div>
@@ -88,10 +92,6 @@ const PaymentInfo = () => {
             <div className='flex flex-row gap-5'>
                 <div className='text-gray-400'>Branch Code: </div>
                 <div className=''>{info.bcode}</div>
-            </div>
-            <div className='flex flex-row gap-5'>
-                <div className='text-gray-400'>Bank Name: </div>
-                <div className=''>{info.bank_name}</div>
             </div>
         </div>
     )
@@ -434,7 +434,7 @@ const Register = () => {
                     <h1 className="mainh1 text-[#23B6DF] font-extrabold text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-600 sm:mb-8 md:mb-8">
                         REGISTER NOW!
                     </h1>
-                    <div className="scale-65 part2 mt-16 hidden sm:flex md:flex lg:inline xl:inline 2xl:inline ml-auto">
+                    <div className="scale-65 part2 mt-16 hidden sm:flex md:hidden lg:inline xl:inline 2xl:inline ml-auto">
                         <img src={Arrow1} alt="" className="" />
                     </div>
                 </div>
@@ -797,7 +797,7 @@ const Register = () => {
                             handleChange={handleInput}
                         />
                     </div>
-                </div>
+                </div>                                                                        
 
                 <div className="flex flex-col md:flex-col gap-5 w-[270px] sm:w-[350px] md:w-[400px] lg:w-[65%] mx-auto">
                     <h4  className='text-gray-400 '>Enter a reference code for 20% discount!</h4>
@@ -878,6 +878,13 @@ const Register = () => {
                     </CardContent>
                 </Card>
 
+
+                <div className="bg-gray-900 border-gray-700 px-2 rounded-3xl flex justify-center align-center">
+                        <h2 className="mainh1 text-[#23B6DF] mx-auto font-medium text-xl mt-4 text-center sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-4xl text-600 text-balance sm:mb-8 md:mb-8">
+                            Rs 999 per team for every competitions
+                        </h2>
+                </div>
+                
                 <div className="lg:hidden  mb-2 flex justify-center gap-2 z-0">
                     <div className="">
                         <div className="flex flex-col  gap-4">

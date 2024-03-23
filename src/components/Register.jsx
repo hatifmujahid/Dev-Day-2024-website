@@ -197,19 +197,22 @@ const Register = () => {
                         <h1 className="mainh1 font-extrabold  text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-600 sm:mb-8 md:mb-8">
                             REGISTER NOW!
                         </h1>
+                        <h2 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-600 sm:mb-8 md:mb-8">
+                            Rs 999 per team for every competition
+                        </h2>
                         <div className="scale-65 part2 mt-16 hidden sm:flex md:flex lg:inline xl:inline 2xl:inline">
                             <img src={Arrow1} alt="" className="" />
                         </div>
                     </div>
 
                     <img
-                        className="image1 scale-75 sm:m-auto md:m-auto sm:mb-20 md:mb-20 hidden sm:flex md:flex lg:flex"
+                        className="image1 scale-75 sm:m-auto md:m-auto sm:mb-20 md:mb-20 hidden sm:hidden md:hidden lg:flex"
                         src={Image1}
                         alt="image1"
                     />
                 </div>
 
-                <div className="lg:hidden  mb-8 flex justify-center gap-2 z-0">
+                <div className="lg:hidden mb-8 flex justify-center gap-2 z-0">
                     <div className="relative top-10">
                         <div className="flex flex-col  gap-4">
                             <div class="flex justify-center ">
