@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 .clas{
-    background-color: #23b6df77;
+    background-color: hsla(193, 75%, 51%, 0.467);
+}
+
+.class{
+    background-color: #2e4f7cdb;
 }
