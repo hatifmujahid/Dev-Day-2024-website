@@ -45,6 +45,7 @@ const Navbar = () => {
         { id: 1, text: 'Home', href: '/' },
         { id: 2, text: 'About Us', href: '/about' },
         { id: 3, text: 'Register', href: '/register' },
+        {id: 4, text: 'ChatBot', href: '/chatBot'}
     ]
 
     return (
@@ -62,7 +63,7 @@ const Navbar = () => {
                 {navItems.map((item) => (
                     <li
                         key={item.id}
-                        className="text-white text-xl hover:underline p-2 mx-4 cursor-pointer"
+                        className={item.text !== "ChatBot" ? "text-white text-xl hover:underline p-2 mx-4 cursor-pointer" : "rounded-xl border-b border-[#23B6DF] px-4 text-white text-xl p-2 mx-4 cursor-pointer hover:bg-gradient-to-r hover:from-[#23B6DF] hover:to-[#088097]"}
                     >
                         <a href={item.href}>{item.text}</a>
                     </li>

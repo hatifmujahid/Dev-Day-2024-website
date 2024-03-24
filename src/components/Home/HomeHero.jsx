@@ -6,7 +6,9 @@ import Sponser from './Sponser'
 import React, { useRef } from 'react';
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
 import Competition from './Competition'
+import Main from './Main'
 import Footer from "../Footer"
+import HeroComp from "./HeroComp"
 
 const HeroButton = ({ text, bgColor, link }) => {
     const colorClasses = {
@@ -88,9 +90,9 @@ const HomeHero = () => {
     const text = ['Dream', 'Develop', 'Deliver']
 
     return (
-        <>
+        <div className="bg-[#031e2c]">
             <Nav />
-            <div className="flex justify-center items-center flex-col h-screen bg-[#03071C]">
+            <div className="flex justify-center items-center flex-col h-screen bg-[#031e2c]">
                 <motion.div
                     className="flex justify-center items-center"
                     initial={{ opacity: 0, x: -100 }} // Initial animation properties
@@ -100,7 +102,7 @@ const HomeHero = () => {
                     style={{ opacity, scale }}// Transition duration with delay
                 >
                     <motion.img
-                        className="w-[130px] sm:w-[350px] lg:w-[600px]"
+                        className="w-[130px] sm:w-[350px] lg:w-[550px]"
                         src={logoIcon}
                         initial={{ opacity: 0, y: -100 }} // Initial animation properties
                         animate={{ opacity: 1, y: 0 }} // Animation properties when component is mounted
@@ -166,10 +168,13 @@ const HomeHero = () => {
                 </motion.div>
                 <HeroSectionHome />
             </div>
+            
+            <Main/>
+            <HeroComp/>
             <Sponser />
             <Competition/>
             <Footer/>
-        </>
+        </div>
     )
 }
 

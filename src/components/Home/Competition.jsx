@@ -2,7 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import CsComp from './CsComp';
-import EEComp from "./ElectricalCompetition";
+import RoboComp from "./RoboComp"
+import GeneralComp from "./GeneralComp"
 
 const Competition = () => {
     const controls = useAnimation();
@@ -24,7 +25,7 @@ const Competition = () => {
     }, [controls, inView]);
 
     return (
-        <div className="flex bg-[#03071C] w-full flex-col">
+        <div className="flex bg-[#031e2c] w-full flex-col">
             <div className="mb-8 lg:mt-20 mx-8 sm:mx-16 md:mx-24 lg:mx-48">
                 <motion.div
                     ref={ref}
@@ -40,7 +41,8 @@ const Competition = () => {
             </div>
 
             <CsComp/>
-            <EEComp/>
+            <GeneralComp/>
+            <RoboComp/>
         </div>
     );
 };
