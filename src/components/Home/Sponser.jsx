@@ -22,7 +22,7 @@ const Sponser = () => {
     }, [controls, inView]);
 
     return (
-        <div className="flex h-screen bg-[#03071C] w-full">
+        <div className="flex h-screen bg-[#031e2c] w-full">
             <div className="mb-8 w-full lg:mt-20 mx-8 sm:mx-16 md:mx-24 lg:mx-48">
                 <motion.div
                     ref={ref}

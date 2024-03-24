@@ -5,7 +5,7 @@ const social_links = [
   {
     link: "https://www.instagram.com/developersday/",
     imageURL:
-      "https://icons8.com/icon/32309/instagram",
+      "https://ascotlife.church/wp-content/uploads/2020/06/white-instagram-icon-png.png",
   },
   {
     link: "https://www.linkedin.com/company/developersday/",
