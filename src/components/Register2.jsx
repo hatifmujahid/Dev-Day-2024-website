@@ -800,7 +800,7 @@ const Register = () => {
                 </div>                                                                        
 
                 <div className="flex flex-col md:flex-col gap-5 w-[270px] sm:w-[350px] md:w-[400px] lg:w-[65%] mx-auto">
-                    <h4  className='text-gray-400 '>Enter a reference code for 20% discount!</h4>
+                    <h4  className='text-gray-400 '>Enter a reference code (if any!)</h4>
                     <InputBox
                         label="Reference Code (if any)"
                         name="referenceCode"
