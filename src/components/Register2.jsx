@@ -63,11 +63,11 @@ function UploadCloudIcon(props) {
 const PaymentInfo = () => {
 
     const info = {
-        title: "BCCI-FAST NUCES-KHI OPER",
-        number: "0169007900161339",
-        iban: "PK94FAYS0169007900161339",
-        bcode: "169",
-        bank_name: "Faysal Bank",
+        title: "Muhammad Shahmir Raza",
+        number: "03022173193",
+        // iban: "PK94FAYS0169007900161339",
+        // bcode: "169",
+        bank_name: "SadaPay",
     }
 
     return (
@@ -85,14 +85,14 @@ const PaymentInfo = () => {
                 <div className='text-gray-400'>Account Number: </div>
                 <div className=''>{info.number}</div>
             </div>
-            <div className='flex flex-row gap-5'>
+{/*             <div className='flex flex-row gap-5'>
                 <div className='text-gray-400'>IBAN: </div>
                 <div className=''>{info.iban}</div>
             </div>
             <div className='flex flex-row gap-5'>
                 <div className='text-gray-400'>Branch Code: </div>
                 <div className=''>{info.bcode}</div>
-            </div>
+            </div> */}
         </div>
     )
 }
@@ -238,8 +238,8 @@ const Register = () => {
     }
     const competitionTypes = [
         'CS Competitions',
-        'General Competitions',
-        'Robotics Competitions'
+        // 'General Competitions',
+        // 'Robotics Competitions'
     ]
 
     const handleCompetitionChange = (e) => {
@@ -800,7 +800,7 @@ const Register = () => {
                 </div>                                                                        
 
                 <div className="flex flex-col md:flex-col gap-5 w-[270px] sm:w-[350px] md:w-[400px] lg:w-[65%] mx-auto">
-                    <h4  className='text-gray-400 '>Enter a reference code for 20% discount!</h4>
+                    <h4  className='text-gray-400 '>Enter a reference code (if any!)</h4>
                     <InputBox
                         label="Reference Code (if any)"
                         name="referenceCode"
@@ -881,7 +881,7 @@ const Register = () => {
 
                 <div className="bg-gray-900 border-gray-700 px-2 rounded-3xl flex justify-center align-center">
                         <h2 className="mainh1 text-[#23B6DF] mx-auto font-medium text-xl mt-4 text-center sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-4xl text-600 text-balance sm:mb-8 md:mb-8">
-                            Rs 999 per team for every competitions
+                            Rs 1199 per team for CS competitions.
                         </h2>
                 </div>
                 
