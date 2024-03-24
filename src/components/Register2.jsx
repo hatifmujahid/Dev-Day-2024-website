@@ -63,11 +63,11 @@ function UploadCloudIcon(props) {
 const PaymentInfo = () => {
 
     const info = {
-        title: "BCCI-FAST NUCES-KHI OPER",
-        number: "0169007900161339",
-        iban: "PK94FAYS0169007900161339",
-        bcode: "169",
-        bank_name: "Faysal Bank",
+        title: "Muhammad Shahmir Raza",
+        number: "03022173193",
+        // iban: "PK94FAYS0169007900161339",
+        // bcode: "169",
+        bank_name: "SadaPay",
     }
 
     return (
@@ -85,14 +85,14 @@ const PaymentInfo = () => {
                 <div className='text-gray-400'>Account Number: </div>
                 <div className=''>{info.number}</div>
             </div>
-            <div className='flex flex-row gap-5'>
+{/*             <div className='flex flex-row gap-5'>
                 <div className='text-gray-400'>IBAN: </div>
                 <div className=''>{info.iban}</div>
             </div>
             <div className='flex flex-row gap-5'>
                 <div className='text-gray-400'>Branch Code: </div>
                 <div className=''>{info.bcode}</div>
-            </div>
+            </div> */}
         </div>
     )
 }
@@ -800,7 +800,7 @@ const Register = () => {
                 </div>                                                                        
 
                 <div className="flex flex-col md:flex-col gap-5 w-[270px] sm:w-[350px] md:w-[400px] lg:w-[65%] mx-auto">
-                    <h4  className='text-gray-400 '>Enter a reference code for 20% discount!</h4>
+                    <h4  className='text-gray-400 '>Enter a reference code (if any!)</h4>
                     <InputBox
                         label="Reference Code (if any)"
                         name="referenceCode"
