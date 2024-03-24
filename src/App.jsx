@@ -8,7 +8,6 @@ import Register from './components/Register2'
 import About from  './components/About'
 import HomeHero from "./components/Home/HomeHero"
 import Footer from './components/Footer'
-import ExComCard from './components/About/ExComCard';
 import {
   BrowserRouter as Router,
   Routes,
@@ -26,8 +25,8 @@ function App() {
         <Route path="/ambassador" element={<Ambassador />} />
         <Route path="/register" element={<Register />} />
         <Route path="/*" element={<ComingSoon />} />
-         {/* <Route path="/about" element={<About />} /> */}
-        {/* <Route path="/" element={<HomeHero />} />  */}
+        <Route path="/about" element={<About />} />
+        <Route path="/" element={<HomeHero />} />
         
       </Routes>
     </Router>
