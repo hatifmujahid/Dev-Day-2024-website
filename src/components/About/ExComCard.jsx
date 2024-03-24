@@ -7,7 +7,8 @@ const ExComCard = ({ imgUrl, title, name }) => {
         bg-primary
         relative
         border-4 border-black
-        
+        row-span-1
+        col-span-1
         h-[300px] w-[300px]
         p-4
 
@@ -18,16 +19,9 @@ const ExComCard = ({ imgUrl, title, name }) => {
         lg:p-8
     `}
     >
-      <img className="object-coer" src={imgUrl} alt={`${title} ${name}`} />
+      <img className="" src={imgUrl} alt={`${title} ${name}`} />
       <div
-        className={`
-        bg-[#FFFFFF]
-        absolute
-        w-full
-        h-auto
-        border-4 border-black
-        
-        pt-4 pb-4 pl-3
+        className={`bg-[#006984] absolute w-full h-auto border-4 border-black pt-4 pb-4 pl-3
         bottom-4 right-4
 
         md:pt-5 md:pb-5 md:pl-4
@@ -37,22 +31,24 @@ const ExComCard = ({ imgUrl, title, name }) => {
       >
         <p
           className={`
-            text-2xl font-normal
+          text-white
+            text-xl font-normal
 
-            md:text-4xl md:pb-2
+            md:text-2xl md:pb-2
 
-            lg:text-6xl lg:pb-4
+            lg:text-2xl lg:pb-4
         `}
         >
           {title}
         </p>
         <p
           className={`
-            text-3xl font-bold
+          text-white
+            text-xl font-bold
 
-            md:text-5xl
+            md:text-3xl
 
-            lg:text-7xl
+            lg:text-3xl
         `}
         >
           {name}
