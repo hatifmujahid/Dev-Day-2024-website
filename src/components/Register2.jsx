@@ -238,8 +238,8 @@ const Register = () => {
     }
     const competitionTypes = [
         'CS Competitions',
-        'General Competitions',
-        'Robotics Competitions'
+        // 'General Competitions',
+        // 'Robotics Competitions'
     ]
 
     const handleCompetitionChange = (e) => {
@@ -881,7 +881,7 @@ const Register = () => {
 
                 <div className="bg-gray-900 border-gray-700 px-2 rounded-3xl flex justify-center align-center">
                         <h2 className="mainh1 text-[#23B6DF] mx-auto font-medium text-xl mt-4 text-center sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-4xl text-600 text-balance sm:mb-8 md:mb-8">
-                            Rs 999 per team for every competitions
+                            Rs 1199 per team for CS competitions.
                         </h2>
                 </div>
                 
