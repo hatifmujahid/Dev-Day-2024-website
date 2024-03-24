@@ -63,11 +63,11 @@ function UploadCloudIcon(props) {
 const PaymentInfo = () => {
 
     const info = {
-        title: "BCCI-FAST NUCES-KHI OPER",
-        number: "0169007900161339",
-        iban: "PK94FAYS0169007900161339",
-        bcode: "169",
-        bank_name: "Faysal Bank",
+        title: "Muhammad Shahmir Raza",
+        number: "03022173193",
+        // iban: "PK94FAYS0169007900161339",
+        // bcode: "169",
+        bank_name: "SadaPay",
     }
 
     return (
