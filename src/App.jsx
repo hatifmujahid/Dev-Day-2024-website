@@ -24,9 +24,9 @@ function App() {
       <Routes>
         <Route path="/ambassador" element={<Ambassador />} />
         <Route path="/register" element={<Register />} />
-        {/* <Route path="/*" element={<ComingSoon />} /> */}
+        <Route path="/*" element={<ComingSoon />} />
         {/* <Route path="/about" element={<About />} /> */}
-        <Route path="/" element={<HomeHero />} /> 
+        {/* <Route path="/" element={<HomeHero />} />  */}
         
       </Routes>
     </Router>
