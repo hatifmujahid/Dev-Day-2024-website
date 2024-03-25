@@ -9,7 +9,7 @@ const FypExtreme = () => {
         <img src={Image1} alt="" class="w-full h-full object-cover" />
         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60">
           <h1 class="text-4xl sm:text-7xl lg:text-[120px] font-black text-white">
-            FYP Extreme
+            FYP Xtreme
           </h1>
         </div>
       </div>

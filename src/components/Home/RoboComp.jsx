@@ -23,7 +23,7 @@ const RoboComp = () => {
 const compData = [
     {
         title: "Line Following Robot (LFR) Competition",
-        description: "A competition where robots are designed to follow a line on the ground. The robot that completes the course in the shortest time wins.",
+        description: "A competition where robots follow a line on the ground. The robot that completes the course in the shortest time wins.",
         link: "https://www.google.com",
         color: "#FFA500"
     },
