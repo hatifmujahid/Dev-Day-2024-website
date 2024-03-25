@@ -21,12 +21,13 @@ function App() {
 
   return (
     <Router>
+      <Nav/>
       <Routes>
         <Route path="/ambassador" element={<Ambassador />} />
         <Route path="/register" element={<Register />} />
         <Route path="/*" element={<ComingSoon />} />
-        {/* <Route path="/about" element={<About />} />
-        <Route path="/" element={<HomeHero />} /> */}
+        {/* <Route path="/about" element={<About />} /> */}
+        <Route path="/" element={<HomeHero />} />
         
       </Routes>
     </Router>
