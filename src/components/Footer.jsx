@@ -37,7 +37,7 @@ const Footer = () => {
           <div className="mx-auto w-full  p-4 py-6 lg:py-8 bg-[#03071C] ">
             <div className="md:flex md:justify-between">
               <div className="mb-6 md:mb-0 ml-9">
-              <a href="https://flowbite.com/" className="flex items-center md:flex md:justify-center">
+              <a href="https://www.acmdevday.com" className="flex items-center md:flex md:justify-center">
   <img className="mx-auto md:mx-0" src={Logo} width={"250vw"} alt="Logo" />
 </a>
               </div>
