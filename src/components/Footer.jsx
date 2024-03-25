@@ -6,17 +6,17 @@ const social_links = [
     link: "https://www.instagram.com/developersday/",
     imageURL:
       "https://ascotlife.church/wp-content/uploads/2020/06/white-instagram-icon-png.png",
-    className: "w-16 h-8 img1"  
+    className: "w-16 img1"  
   },
   {
     link: "https://www.linkedin.com/company/developersday/",
     imageURL:"https://focusmaine.org/wp-content/uploads/2020/04/linkedin-icon-18-256-white.png",
-    className: "w-8 h-8 img1"
+    className: "w-8  img1"
   },
   {
     link: "https://www.facebook.com/DevelopersDay/",
     imageURL: "https://1000logos.net/wp-content/uploads/2017/02/Facebook-Logosu.png",
-    className: "w-16 h-8 img1"
+    className: "w-16  img1"
   }
   // {
   //   link: "https://github.com/",
@@ -80,7 +80,7 @@ const Footer = () => {
                         
                         <a
                           href={item.link}
-                          className="text-gray-500 hover:text-black dark:hover:text-white ms-2"
+                          className="text-gray-500 object-cover hover:text-black dark:hover:text-white ms-2"
                           target="_blank"
                         >
                           <img src={item.imageURL} alt="image" className={item.className}/>

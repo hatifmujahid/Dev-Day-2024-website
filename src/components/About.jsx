@@ -17,7 +17,6 @@ import hatif from "../assets/Excom/Hatif_Tech_Lead.jpg";
 import abubakar from "../assets/Excom/Abubakar Corporate Affairs.jpg";
 import sareem from "../assets/Excom/Sareem_Branding.jpg";
 import muaz from "../assets/Excom/Muaaz_SOP_Head.jpg"
-import CoreCard from "../components/About/CoreCard";
 const About = () => {
   const ExcomData = [
     {
@@ -72,63 +71,8 @@ const About = () => {
       name : "Muaaz Mohsin"
     },
   ]
-
-  const CoreTeamData = [
-    {
-      imgUrl : hamad,
-      title : "President",
-      name : "Hamad Sami"
-    },
-    {
-      imgUrl : ahmed,
-      title : "ChairPerson",
-      name : "M. Ahmed"
-    },
-    {
-      imgUrl : hira,
-      title : "Vice-President",
-      name : "Hira Rehman"
-    },
-    {
-      imgUrl : shahmir,
-      title : "General Secretary",
-      name : "M. Shahmir"
-    },
-    {
-      imgUrl : usman,
-      title : "Event Administrator",
-      name : "Usman Nisar"
-    },
-    {
-      imgUrl : sarim,
-      title : "Treasurer",
-      name : "Sarim Latif Khan"
-    },
-    {
-      imgUrl : hatif,
-      title : "Tech Lead",
-      name : "Hatif Mujahid"
-    },
-    {
-      imgUrl : abubakar,
-      title : "Marketing Manager",
-      name : "AbuBakr Danish"
-    },
-    {
-      imgUrl : sareem,
-      title : "Director Branding",
-      name : "Sareem Farooqui"
-    },
-
-    {
-      imgUrl : muaz,
-      title : "SOP Compliance Head",
-      name : "Muaaz Mohsin"
-    },
-  ]
-
   return (
-    <div className="bg-[#03071C]">
+    <div className="bg-[#031e2c]">
       <Nav />
       <br />
 
@@ -172,7 +116,7 @@ const About = () => {
         </div>
 
         {/* space for excom member cards */}
-        <div className="m-4 flex flex-wrap gap-10 ml-8">
+        <div className="m-4 border flex flex-wrap gap-10 ml-8 justify-center">
           {ExcomData.map((data) => {
             return (
               <ExcomCard imgUrl={data.imgUrl} title={data.title} name={data.name}/>
@@ -192,13 +136,6 @@ const About = () => {
             </div>
         </div>
         {/* space for core member cards */}
-        <div className="m-10 flex flex-wrap gap-10 ml-8">
-          {CoreTeamData.map((data) => {
-            return (
-              <CoreCard imgUrl={data.imgUrl} title={data.title} name={data.name}/>
-            )
-          })}
-        </div>
 
 
 
