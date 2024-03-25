@@ -117,7 +117,7 @@ const HomeHero = () => {
                             animate={{ opacity: 1, x: 0 }} // Animation properties when component is mounted
                             transition={{ duration: 1, delay: 1 }}
                         >
-                            <h2 className="text-4xl sm:text-7xl lg:text-[150px] font-black text-[#088097]">
+                            <h2 className="text-4xl md:text-5xl lg:text-[110px] font-black text-[#088097] mb-4">
                             Developer's
                         </h2>
                         </motion.div>
@@ -128,7 +128,7 @@ const HomeHero = () => {
                             animate={{ opacity: 1, x: 0 }} // Animation properties when component is mounted
                             transition={{ duration: 1, delay: 1 }}
                         >
-                            <h2 className="text-[#23B6DF] text-4xl sm:text-7xl  lg:text-[150px] font-extrabold">
+                            <h2 className="text-[#23B6DF] text-4xl sm:text-7xl  lg:text-[110px] font-extrabold mb-4">
                                 <span>Day</span>
                                 <span> ‘24</span>
                             </h2>

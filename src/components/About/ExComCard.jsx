@@ -26,7 +26,7 @@ const ExComCard = ({ imgUrl, title, name }) => {
         />
       </div>
       <div
-        className={`bg-[#006984] absolute w-full h-auto border-4 border-black pt-4 pb-4 pl-3
+        className={`bg-gradient-to-r from-[#003149] to-[#0075AF] absolute w-full h-auto border-4 border-black pt-4 pb-4 pl-3
         bottom-4 right-4
 
         md:pt-5 md:pb-5 md:pl-4

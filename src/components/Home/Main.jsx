@@ -30,7 +30,7 @@ const Main = () => {
                     className="w-full lg:w-[800px] relative z-1"
                 >
             <h1 className=" text-2xl mb-5 sm:text-5xl lg:text-[80px] font-black text-white ">
-                Biggest <span className="text-[#23B6DF] mb-4 mt-8 block">Tech Event</span>
+                Best <span className="text-[#23B6DF] mb-4 mt-8 block">Tech Event</span>
             </h1>
             <h1 className=" text-2xl mb-5 sm:text-5xl lg:text-[80px] font-black text-white ">
                 of the Year

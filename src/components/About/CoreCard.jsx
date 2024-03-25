@@ -5,7 +5,9 @@ const ExComCard = ({ imgUrl, title, name }) => {
   return (
     <div
       className={`
-        bg-primary
+        mt-10
+        mb-10
+        bg-gradient-to-b from-[#0075AF] to-[#003149]
         border-4 border-black
         relative
         h-[300px] w-[300px]
@@ -18,20 +20,30 @@ const ExComCard = ({ imgUrl, title, name }) => {
         lg:p-8
     `}
     >
+      <div className="">
       <img
         className={`
             absolute
             m-auto
+            w-60
             border-4 border-black
             rounded-full
-            left-0
-            bottom-0
+            left-28
+            bottom-34
             top-[-40px]
-            object-cover
+            md:h-60
+            sm:h-52
         `}
         src={imgUrl}
         alt={`${title} ${name}`}
       />
+      </div>
+      {/* <div className="absolute inset-0">
+        <img
+          className="object-fill w-full h-full rounded-t-full"
+          src={imgUrl}
+        />
+      </div> */}
       <div
         className={`
             absolute
@@ -49,7 +61,7 @@ const ExComCard = ({ imgUrl, title, name }) => {
 
             md:text-5xl
 
-            lg:text-7xl
+            lg:text-2xl
         `}
         >
           {name}
