@@ -9,6 +9,8 @@ import Competition from './Competition'
 import Main from './Main'
 import Footer from "../Footer"
 import HeroComp from "./HeroComp"
+import FypExtreme from './FypExtreme'
+import DDVideo from './DDVideo'
 
 const HeroButton = ({ text, bgColor, link }) => {
     const colorClasses = {
@@ -172,6 +174,8 @@ const HomeHero = () => {
             <Main/>
             <HeroComp/>
             <Sponser />
+            <FypExtreme />
+            <DDVideo />
             <Competition/>
             <Footer/>
         </div>

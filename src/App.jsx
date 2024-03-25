@@ -8,7 +8,6 @@ import Register from './components/Register2'
 import About from  './components/About'
 import HomeHero from "./components/Home/HomeHero"
 import Footer from './components/Footer'
-import ExComCard from './components/About/ExComCard';
 import {
   BrowserRouter as Router,
   Routes,
@@ -22,11 +21,12 @@ function App() {
 
   return (
     <Router>
+      <Nav/>
       <Routes>
         <Route path="/ambassador" element={<Ambassador />} />
         <Route path="/register" element={<Register />} />
         <Route path="/*" element={<ComingSoon />} />
-        <Route path="/about" element={<About />} />
+        {/* <Route path="/about" element={<About />} /> */}
         <Route path="/" element={<HomeHero />} />
         
       </Routes>
