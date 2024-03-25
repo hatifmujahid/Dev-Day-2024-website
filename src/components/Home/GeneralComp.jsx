@@ -74,7 +74,7 @@ const compData = [
                     animate={controls}
                 >
       <h1 className=" text-2xl mb-5 sm:text-5xl lg:text-[80px] font-black text-[#088097] ">
-        COMPUTER SCIENCE
+        GENERAL COMPETITION
       </h1>
                 </motion.div>
 
