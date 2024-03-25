@@ -1079,7 +1079,8 @@ console.log(competitionTypes);
 
                 <div className="bg-gray-900 border-gray-700 px-2 rounded-3xl flex justify-center align-center">
                         <h2 className="mainh1 text-[#23B6DF] mx-auto font-medium text-xl mt-4 text-center sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-4xl text-600 text-balance sm:mb-8 md:mb-8">
-                            PKR. 1199 for scavanger Hunt 
+                            PKR. 1199/team for scavanger Hunt <br/>
+                            PKR. 2499/team for CS2 <br />
                             PKR. 999 for ALL OTHER COMPETITIONS.
                         </h2>
                 </div>
