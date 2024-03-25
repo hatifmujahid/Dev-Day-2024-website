@@ -46,7 +46,7 @@ const Sponser = () => {
                 </motion.div>
                 
                 <div className="border border-[#4C878F]/[0.2] h-0.5 mt-8"></div>
-                <div className=''>Sponsers Here</div>
+{/*                 <div className=''>Sponsers Here</div> */}
             </div>
         </div>
     );
