@@ -48,7 +48,7 @@ const HeroComp = () => {
         animate={controls2}
       >
         <h1 className="text-2xl mb-5 sm:text-5xl lg:text-[80px] font-black text-white mt-16">
-          Price Money Worth <br/><div className="text-[#23B6DF] text-8xl mt-5">1 Million PKR</div>
+          Price Money Worth <br/><div className="text-[#23B6DF] text-8xl mt-5 pb-10">1 Million PKR</div>
         </h1>
       </motion.div>
     </div>

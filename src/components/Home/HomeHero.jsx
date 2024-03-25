@@ -173,7 +173,7 @@ const HomeHero = () => {
             
             <Main/>
             <HeroComp/>
-            <Sponser />
+            {/* <Sponser /> */}
             <FypExtreme />
             <DDVideo />
             <Competition/>
