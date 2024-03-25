@@ -234,29 +234,7 @@ const Register = () => {
     };
 
     let competitionOptions = competitionOptionsMap[competitionType] || [];
-
-<<<<<<< HEAD
-=======
-    let competitionOptions = []
-    if (competitionType === "CS Competitions") {
-        competitionOptions = csCompetitions
-    }
-    else if (competitionType === "General Competitions") {
-        competitionOptions = generalCompetitions
-    }
-    else if(competitionType === "Robotics Competitions"){
-        competitionOptions = roboticsCompetitions;
-    }
-    else {
-        competitionOptions = []
-    }
-    const competitionTypes = [
-        'CS Competitions',
-        // 'General Competitions',
-        // 'Robotics Competitions'
-    ]
->>>>>>> 939bcfe3126cce1be82c7eb7834719614976f0c6
-
+    
     const [competitionTypes, setCompetitionTypes] = useState([]);
 
     useEffect(() => {
