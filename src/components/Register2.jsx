@@ -474,8 +474,8 @@ console.log(competitionTypes);
     }
 
     return (
-        <div className="bg-[#03071C]">
-            <div className="bg-[#03071C] flex justify-center items-center flex-col">
+        <div className="bg-[#031e2c]">
+            <div className="bg-[#031e2c] flex justify-center items-center flex-col">
                 <div className=" part1 flex justify-space-evenly items-center xl:flex lg:flex sm:inline-block md:inline-block sm:text-center md:text-center mt-16">
                 <div className="mt-12">
                     <h1 className="mainh1 text-[#23B6DF] font-extrabold text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-600 sm:mb-8 md:mb-8">
@@ -608,7 +608,7 @@ console.log(competitionTypes);
                     </div>
                 </div>
             </div>
-            <div className="mx-auto relative z-10 bg-[#03071C] ">
+            <div className="mx-auto relative z-10 bg-[#031e2c] ">
                 <h1 className="text-center text-2xl font-bold mb-4 text-[#23B6DF]">
                     SELECT A COMPETITION
                     <span className="text-red-700">{error.competition && ' *'} </span>
@@ -673,11 +673,11 @@ console.log(competitionTypes);
                     </div>
                 </div>
             </div>
-            <div className="hidden lg:flex lg:max-h-[505px] lg:items-center lg:flex-col z-0 lg:-mt-[110px] bg-[#03071C] scale-75">
+            <div className="hidden lg:flex lg:max-h-[505px] lg:items-center lg:flex-col z-0 lg:-mt-[110px] bg-[#031e2c] scale-75">
                 <img src={svg1} alt="" />
             </div>
 
-            <div className="lg:hidden  min-h-[310px] flex justify-center gap-2 z-0 bg-[#03071C] ">
+            <div className="lg:hidden  min-h-[310px] flex justify-center gap-2 z-0 bg-[#031e2c] ">
                 <div className="relative top-10">
                     <div className="flex flex-col  gap-4">
                         <div class="flex justify-center ">
@@ -710,7 +710,7 @@ console.log(competitionTypes);
                 </div>
             </div>
 
-            <div className="flex bg-[#03071C]  flex-col items-center gap-20  mb-12 mt-[-55px]">
+            <div className="flex bg-[#031e2c]  flex-col items-center gap-20  mb-12 mt-[-55px]">
                 <div className="flex flex-center justify-start w-[240px] sm:w-[400px] md:w-[600px] lg:w-[75%]">
                     <h1 className="text-5xl font-bold text-white w-full ">
                         Team Information
@@ -749,7 +749,7 @@ console.log(competitionTypes);
                 />
             </div>
 
-            <div className="flex bg-[#03071C]  flex-col items-center gap-20 ">
+            <div className="flex bg-[#031e2c]  flex-col items-center gap-20 ">
                 <div className="flex flex-col gap-5 w-[270px] sm:w-[450px] md:w-[600px] lg:w-[75%] ">
                     <h1 className="text-3xl font-bold text-[#23B6DF]">
                         Team Leader
@@ -842,7 +842,7 @@ console.log(competitionTypes);
                 }
 
                 {competition.maxMembers > 1 &&
-                <div className="mx-auto relative z-10 bg-[#03071C] ">
+                <div className="mx-auto relative z-10 bg-[#031e2c] ">
                 <h1 className="text-center text-2xl font-bold mb-4 text-[#23B6DF]">
                     Select Number of Team Members
                     <span className="text-red-700">{error.competition && ' *'} </span>
