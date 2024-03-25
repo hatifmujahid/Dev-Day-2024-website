@@ -1,28 +1,8 @@
 import React from "react";
 import Logo from "../assets/acm.svg";
-
-const social_links = [
-  {
-    link: "https://www.instagram.com/developersday/",
-    imageURL:
-      "https://ascotlife.church/wp-content/uploads/2020/06/white-instagram-icon-png.png",
-    className: "w-16 h-8 img1"  
-  },
-  {
-    link: "https://www.linkedin.com/company/developersday/",
-    imageURL:"https://focusmaine.org/wp-content/uploads/2020/04/linkedin-icon-18-256-white.png",
-    className: "w-8 h-8 img1"
-  },
-  {
-    link: "https://www.facebook.com/DevelopersDay/",
-    imageURL: "https://1000logos.net/wp-content/uploads/2017/02/Facebook-Logosu.png",
-    className: "w-16 h-8 img1"
-  }
-  // {
-  //   link: "https://github.com/",
-  //   imageURL: "https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg"
-  // }
-];
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -74,21 +54,12 @@ const Footer = () => {
                   <h2 className=" text-sm font-bold text-black uppercase text-lg ml-6 text-white">
                     Connect with Us
                   </h2>
-                  <ul className="text-gray-500 w-full dark:text-gray-400 font-medium text-lg flex sm:justify-start sm:mt-0">
-                    {social_links.map((item, index) => (
-                      <li key={index} className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
-                        
-                        <a
-                          href={item.link}
-                          className="text-gray-500 hover:text-black dark:hover:text-white ms-2"
-                          target="_blank"
-                        >
-                          <img src={item.imageURL} alt="image" className={item.className}/>
-                          <span className="sr-only">Social Media App</span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
+
+                  <div className="flex flex-wrap m-4">
+                    <a href="https://www.instagram.com/developersday/" className="text-white mx-4 text-2xl"><FaInstagram /></a>
+                    <a href="https://www.linkedin.com/company/developersday/" className="text-white mx-4 text-2xl"><FaLinkedin /></a>
+                    <a href="https://www.facebook.com/DevelopersDay/" className="text-white mx-4 text-2xl"><FaFacebook /></a>
+                  </div>
                 </div>
               </div>
             </div>
