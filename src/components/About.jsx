@@ -6,8 +6,71 @@ import Image2 from "../assets/about-2.png";
 import Image3 from "../assets/about-3.png";
 import Image4 from "../assets/about-4.png";
 import "../components/herosection2.css";
-
+import ExcomCard from "../components/About/ExComCard";
+import hamad from "../assets/Excom/Hamad_President.jpg"
+import ahmed from "../assets/Excom/Ahmed_Chairperson_ACM.jpg"
+import hira from "../assets/Excom/Hira_VP.jpg";
+import shahmir from "../assets/Excom/Shahmir_GS.jpg";
+import usman from "../assets/Excom/Usman_EA_Head.jpg";
+import sarim from "../assets/Excom/Sarim_Treasurer.jpg";
+import hatif from "../assets/Excom/Hatif_Tech_Lead.jpg";
+import abubakar from "../assets/Excom/Abubakar Corporate Affairs.jpg";
+import sareem from "../assets/Excom/Sareem_Branding.jpg";
+import muaz from "../assets/Excom/Muaaz_SOP_Head.jpg"
 const About = () => {
+  const ExcomData = [
+    {
+      imgUrl : hamad,
+      title : "President",
+      name : "Hamad Sami"
+    },
+    {
+      imgUrl : ahmed,
+      title : "ChairPerson",
+      name : "M. Ahmed"
+    },
+    {
+      imgUrl : hira,
+      title : "Vice-President",
+      name : "Hira Rehman"
+    },
+    {
+      imgUrl : shahmir,
+      title : "General Secretary",
+      name : "M. Shahmir"
+    },
+    {
+      imgUrl : usman,
+      title : "Event Administrator",
+      name : "Usman Nisar"
+    },
+    {
+      imgUrl : sarim,
+      title : "Treasurer",
+      name : "Sarim Latif Khan"
+    },
+    {
+      imgUrl : hatif,
+      title : "Tech Lead",
+      name : "Hatif Mujahid"
+    },
+    {
+      imgUrl : abubakar,
+      title : "Marketing Manager",
+      name : "AbuBakr Danish"
+    },
+    {
+      imgUrl : sareem,
+      title : "Director Branding",
+      name : "Sareem Farooqui"
+    },
+
+    {
+      imgUrl : muaz,
+      title : "SOP Compliance Head",
+      name : "Muaaz Mohsin"
+    },
+  ]
   return (
     <div className="bg-[#03071C]">
       <Nav />
@@ -53,8 +116,13 @@ const About = () => {
         </div>
 
         {/* space for excom member cards */}
-
-
+        <div className="m-4 flex flex-wrap gap-10 ml-8">
+          {ExcomData.map((data) => {
+            return (
+              <ExcomCard imgUrl={data.imgUrl} title={data.title} name={data.name}/>
+            )
+          })}
+        </div>
 
 
 

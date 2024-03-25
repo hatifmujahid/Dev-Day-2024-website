@@ -64,11 +64,11 @@ function UploadCloudIcon(props) {
 const PaymentInfo = () => {
 
     const info = {
-        title: "BCCI-FAST NUCES-KHI OPER",
-        number: "0169007900161339",
-        iban: "PK94FAYS0169007900161339",
-        bcode: "169",
-        bank_name: "Faysal Bank",
+        title: "Muhammad Shahmir Raza",
+        number: "03022173193",
+        // iban: "PK94FAYS0169007900161339",
+        // bcode: "169",
+        bank_name: "SadaPay",
     }
 
     return (
@@ -86,14 +86,14 @@ const PaymentInfo = () => {
                 <div className='text-gray-400'>Account Number: </div>
                 <div className=''>{info.number}</div>
             </div>
-            <div className='flex flex-row gap-5'>
+{/*             <div className='flex flex-row gap-5'>
                 <div className='text-gray-400'>IBAN: </div>
                 <div className=''>{info.iban}</div>
             </div>
             <div className='flex flex-row gap-5'>
                 <div className='text-gray-400'>Branch Code: </div>
                 <div className=''>{info.bcode}</div>
-            </div>
+            </div> */}
         </div>
     )
 }
@@ -235,6 +235,27 @@ const Register = () => {
 
     let competitionOptions = competitionOptionsMap[competitionType] || [];
 
+<<<<<<< HEAD
+=======
+    let competitionOptions = []
+    if (competitionType === "CS Competitions") {
+        competitionOptions = csCompetitions
+    }
+    else if (competitionType === "General Competitions") {
+        competitionOptions = generalCompetitions
+    }
+    else if(competitionType === "Robotics Competitions"){
+        competitionOptions = roboticsCompetitions;
+    }
+    else {
+        competitionOptions = []
+    }
+    const competitionTypes = [
+        'CS Competitions',
+        // 'General Competitions',
+        // 'Robotics Competitions'
+    ]
+>>>>>>> 939bcfe3126cce1be82c7eb7834719614976f0c6
 
     const [competitionTypes, setCompetitionTypes] = useState([]);
 
@@ -999,7 +1020,7 @@ console.log(competitionTypes);
 
 
                 <div className="flex flex-col md:flex-col gap-5 w-[270px] sm:w-[350px] md:w-[400px] lg:w-[65%] mx-auto">
-                    <h4  className='text-gray-400 '>Enter a reference code for 20% discount!</h4>
+                    <h4  className='text-gray-400 '>Enter a reference code (if any!)</h4>
                     <InputBox
                         label="Reference Code (if any)"
                         name="referenceCode"
@@ -1080,7 +1101,8 @@ console.log(competitionTypes);
 
                 <div className="bg-gray-900 border-gray-700 px-2 rounded-3xl flex justify-center align-center">
                         <h2 className="mainh1 text-[#23B6DF] mx-auto font-medium text-xl mt-4 text-center sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-4xl text-600 text-balance sm:mb-8 md:mb-8">
-                            Rs 999 per team for every competitions
+                            PKR. 1199 for scavanger Hunt 
+                            PKR. 999 for ALL OTHER COMPETITIONS.
                         </h2>
                 </div>
                 
