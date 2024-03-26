@@ -37,8 +37,8 @@ const HeroComp = () => {
         initial={{ opacity: 0, x: -100 }}
         animate={controls1}
       >
-        <h1 className="text-2xl mb-5 sm:text-5xl lg:text-[80px] font-black text-white">
-          <div className="text-[#23B6DF] text-8xl inline">20+</div> Competitions
+        <h1 className="text-3xl mb-5 sm:text-5xl lg:text-[80px] font-black text-white">
+          <div className="text-[#23B6DF] text-4xl md:text-6xl lg:text-8xl inline">20+</div> Competitions
         </h1>
       </motion.div>
 
@@ -48,7 +48,7 @@ const HeroComp = () => {
         animate={controls2}
       >
         <h1 className="text-2xl mb-5 sm:text-5xl lg:text-[80px] font-black text-white mt-16">
-          Price Money Worth <br/><div className="text-[#23B6DF] text-8xl mt-5 pb-10">1 Million PKR</div>
+          Prize Money Worth <br/><div className="text-[#23B6DF] text-6xl mt-5 pb-10">1 Million PKR</div>
         </h1>
       </motion.div>
     </div>

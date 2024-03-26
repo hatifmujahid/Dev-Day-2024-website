@@ -17,6 +17,8 @@ import hatif from "../assets/Excom/Hatif_Tech_Lead.jpg";
 import abubakar from "../assets/Excom/Abubakar Corporate Affairs.jpg";
 import sareem from "../assets/Excom/Sareem_Branding.jpg";
 import muaz from "../assets/Excom/Muaaz_SOP_Head.jpg"
+
+import CoreCard from "../components/About/CoreCard";
 const About = () => {
   const ExcomData = [
     {
@@ -116,13 +118,15 @@ const About = () => {
         </div>
 
         {/* space for excom member cards */}
-        <div className="m-4 border flex flex-wrap gap-10 ml-8 justify-center">
+        <div className="m-4 flex flex-wrap gap-10 lg:gap-16 mx-auto justify-center border">
           {ExcomData.map((data) => {
             return (
               <ExcomCard imgUrl={data.imgUrl} title={data.title} name={data.name}/>
             )
           })}
         </div>
+        
+        
 
 
 
@@ -137,7 +141,14 @@ const About = () => {
         </div>
         {/* space for core member cards */}
 
-
+        <div className="m-4 flex flex-wrap gap-3 md:gap-10 mx-auto justify-center">
+          {ExcomData.map((data) => {
+            return (
+              <CoreCard imgUrl={data.imgUrl} title={data.title} name={data.name}/>
+            )
+          })}
+        </div>
+        
 
         {/* 4th hero-section */}
         <div className="inline-block lg:flex lg:justify-evenly lg:align-center mt-28">
