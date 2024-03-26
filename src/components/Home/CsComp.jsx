@@ -113,7 +113,7 @@ const compData = [
 
 
   return (
-    <div className="mb-8 lg:mt-20 mx-8 sm:mx-16 md:mx-24 lg:mx-48 flex flex-col">
+    <div className="mb-8 lg:mt-20 mx-8 sm:mx-16 md:mx-24 flex flex-col">
         <motion.div
                     ref={ref}
                     initial={{ opacity: 0, x: -100 }}

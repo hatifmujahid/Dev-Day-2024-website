@@ -6,16 +6,16 @@ const ExComCard = ({ imgUrl, title, name }) => {
       className={`
         bg-primary
         relative
-        border-4 border-black
+        
         row-span-1
         col-span-1
-        h-[300px] w-[300px]
+        h-[180px] w-[130px]
         p-4
 
-        md:h-[375px] md:w-[px]
+        md:h-[375px] md:w-[330px]
         md:p-6
 
-        lg:h-[450px] lg:w-[400px]
+        lg:h-[400px] lg:w-[300px]
         lg:p-8
     `}
     >
@@ -26,7 +26,7 @@ const ExComCard = ({ imgUrl, title, name }) => {
         />
       </div>
       <div
-        className={`bg-gradient-to-r from-[#003149] to-[#0075AF] absolute w-full h-auto border-2 border-black pt-4 pb-4 pl-3
+        className={`bg-gradient-to-r from-[#003149] to-[#0075AF] absolute w-full h-auto border-2 border-black pt-1 pb-1 pl-1
         bottom-4 right-4
 
         md:pt-5 md:pb-5 md:pl-4
@@ -39,7 +39,7 @@ const ExComCard = ({ imgUrl, title, name }) => {
         <p
           className={`
           text-white
-            text-lg font-normal
+            text-sm font-normal
 
             md:text-2xl md:pb-2
 
@@ -51,7 +51,7 @@ const ExComCard = ({ imgUrl, title, name }) => {
         <p
           className={`
           text-white
-            text-xl font-bold
+            text-md font-bold
 
             md:text-3xl
 

@@ -6,7 +6,7 @@ const DDVideo = () => {
     <div>
       <div className="relative w-full h-screen overflow-hidden flex items-center justify-center">
         <video
-          className="mx-auto rounded-3xl"
+          className="mx-auto rounded-none md:rounded-3xl "
           autoPlay
           loop
           muted

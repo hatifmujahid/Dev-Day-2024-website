@@ -92,7 +92,7 @@ const HomeHero = () => {
     const text = ['Dream', 'Develop', 'Deliver']
 
     return (
-        <div className="bg-[#031e2c]">
+        <div className="bg-[#031e2c] overflow-hidden">
             <Nav />
             <div className="flex justify-center items-center flex-col h-screen bg-[#031e2c]">
                 <motion.div
@@ -120,7 +120,7 @@ const HomeHero = () => {
                             transition={{ duration: 1, delay: 1 }}
                         >
                             <h2 className="text-4xl md:text-5xl lg:text-[110px] font-black text-[#088097] mb-4">
-                            Developer's
+                            Developers'
                         </h2>
                         </motion.div>
 
