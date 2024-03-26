@@ -1362,7 +1362,7 @@ console.log(competitionTypes);
                 <div>
                                                     <div className='rounded-2xl w-full bg-gray-800 p-3 text-gray-300 flex'>
                     <div className='text-white mr-6 font-black'>Note:</div>
-                    Free transport will be provided to all the participants. and whoever wants to avail accommodation should mail first at pr@nuceskhi.acm.org . <br/>Accommodation will be paid.
+                    Free transport will be provided to all the participants. <br/>Participants wanting accomodation should email first at pr@nuceskhi.acm.org <br/>Accommodation will be paid.
                 </div>
                 </div>
 
