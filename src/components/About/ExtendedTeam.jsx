@@ -2,13 +2,13 @@ import react from "react";
 
 const TeamColor = ({ bgColor }) => {
   const colorClasses = {
-    purple: "bg-purple",
-    skyblue: "bg-skyblue",
-    orange: "bg-orange",
+    purple: "bg-[#ABAAD7]",
+    skyblue: "bg-[#9BD7E6]",
+    orange: "bg-[#FE9F85]",
   };
   console.log(bgColor);
   const colorClass = colorClasses[bgColor] || "bg-secondary";
-  return <div className={`${colorClass} rounded-full h-24 w-24`}></div>;
+  return <div className={`${colorClass} rounded-full h-20 w-20`}></div>;
 };
 
 const ExtendedTeam = () => {
@@ -77,26 +77,50 @@ const ExtendedTeam = () => {
 
   return (
     <>
-      <div className="w-11/12">
-        <div className="m-16 grid gap-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className={`
+        w-screen
+        text-white
+        `}
+      >
+        <div className={`
+          m-16
+          grid
+          gap-16
+          
+          sm:grid-cols-1
+          
+          md:grid-cols-2
+          
+          lg:grid-cols-3
+        `}
+        >
           {extended.map((team) => {
             return (
               <>
-              <div className="min-w-[282px]">
-                <div className="p-4 rounded-3xl bg-slate-50 flex flex-row items-start">
+              <div className="min-w-[300px]">
+                <div className={`
+                  p-4
+                  pb-6
+                  rounded-3xl
+                  bg-gradient-to-b from-[#0075AF] to-[#003149]
+                  flex
+                  flex-row
+                  items-start
+                `}
+                >
                   <div>
                     <TeamColor bgColor={`${team.color}`} />
                   </div>
-                  <div className="ml-12">
-                    <h1 className="pt-3 text-5xl font-bold">{team.title}</h1>
+                  <div className="ml-8">
+                    <h1 className="pt-3 text-4xl font-bold">{team.title}</h1>
                     {team.members.map((member) => {
                       return (
                         <>
                           <div className="pt-6">
-                            <p className="text-3xl font-semibold">
+                            <p className="text-2xl font-semibold">
                               {member.position}
                             </p>
-                            <p className="pt-1 text-3xl text-slate-500 font-semibold">
+                            <p className="pt-1 text-2 xl text-slate-200 font-semibold">
                               {member.id} {member.name}
                             </p>
                           </div>
