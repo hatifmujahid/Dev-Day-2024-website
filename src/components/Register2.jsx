@@ -1359,6 +1359,13 @@ console.log(competitionTypes);
                     </div>
                 </div>
 
+                <div>
+                                                    <div className='rounded-2xl w-full bg-gray-800 p-3 text-gray-300 flex'>
+                    <div className='text-white mr-6 font-black'>Note:</div>
+                    Free transport will be provided to all the participants. and whoever wants to avail accommodation should mail first at pr@nuceskhi.acm.org . <br/>Accommodation will be paid.
+                </div>
+                </div>
+
                 <div className="grid lg:grid-cols-3 gap-8 w-[300px] md:w-[500px] lg:w-2/3 z-10 mb-5 lg:mb-0">
                     <div className="hidden lg:block col-span-2"></div>
                     <button
