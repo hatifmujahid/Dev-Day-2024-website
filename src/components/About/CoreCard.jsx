@@ -8,31 +8,32 @@ const ExComCard = ({ imgUrl, title, name }) => {
         mt-10
         mb-10
         bg-gradient-to-b from-[#0075AF] to-[#003149]
-        border-4 border-black
         relative
-        h-[300px] w-[300px]
+        min-h-[160px] w-[160px]
         p-4
 
-        md:h-[375px] md:w-[375px]
+        md:h-[300px] md:w-[300px]
         md:p-6
 
-        lg:h-[450px] lg:w-[450px]
+        lg:h-[325px] lg:w-[325px]
         lg:p-8
+        rounded-2xl
     `}
     >
       <div className="">
       <img
         className={`
-            absolute
-            m-auto
-            w-60
-            border-4 border-black
+            object-cover
+            w-32
+            h-32
+
+            md:w-60
             rounded-full
-            left-28
-            bottom-34
-            top-[-40px]
+            mx-auto
+            mt-[-80px]
+
+            md:mt-[-100px]
             md:h-60
-            sm:h-52
         `}
         src={imgUrl}
         alt={`${title} ${name}`}
@@ -46,33 +47,29 @@ const ExComCard = ({ imgUrl, title, name }) => {
       </div> */}
       <div
         className={`
-            absolute
-            h-auto
-            w-full
-            bottom-0
-            left-0
             text-center
+            flex flex-col justify-center mt-5 items-center
         `}
       >
         <p
           className={`
 
-            text-3xl text-white font-bold
+            text-lg text-white font-bold
 
-            md:text-5xl
+            md:text-3xl
 
-            lg:text-2xl
+            lg:text-3xl
         `}
         >
           {name}
         </p>
         <p
           className={`
-            text-2xl text-white font-normal
+            text-sm text-white font-normal
 
-            md:text-4xl md:pb-2
+            md:text-xl md:pb-2
 
-            lg:text-6xl lg:pb-4
+            lg:text-3xl lg:pb-4
           `}
         >
           {title}

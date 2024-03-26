@@ -174,6 +174,7 @@ const Register = () => {
     const [competition, setCompetition] = useState({})
     const [showDialog, setShowDialog] = useState(false)
     const [teamNumber, setTeamNumber] = useState(0);
+    const [loadText, setLoadText] = useState("Submit")
 
     useEffect(() => {
         const fetchData = async () => {
@@ -207,6 +208,26 @@ const Register = () => {
         cnic1: false,
         email1: false,
         phone1: false,
+
+        member2: false,
+        cnic2: false,
+        email2: false,
+        phone2: false,
+
+        member3: false,
+        cnic3: false,
+        email3: false,
+        phone3: false,
+
+        member4: false,
+        cnic4: false,
+        email4: false,
+        phone4: false,
+
+        member5: false,
+        cnic5: false,
+        email5: false,
+        phone5: false,
         file: false,
     })
 
@@ -269,6 +290,7 @@ console.log(competitionTypes);
 
     const handleCompetitionTypeChange = (e) => {
         setCompetitionType(e.target.value)
+        setCompetition({})
     }
 
     const [teamName, setTeamName] = useState('')
@@ -347,10 +369,8 @@ console.log(competitionTypes);
     };
     
     const handleSubmit = async () => {
-
-        console.log(error)
         
-        if (competition === '' || competitionType === '') {
+        if (Object.keys(competition).length === 0 || competitionType === '') {
             alert('Please select a competition')
             if (competition === ""){
                 setError({ ...error, competition: true})
@@ -362,7 +382,7 @@ console.log(competitionTypes);
         }
 
         if (teamName === ''){
-            alert("Please select a team name")
+            alert("Please Enter a team name")
             setError({...error, teamName: true})
             return
         }
@@ -378,6 +398,65 @@ console.log(competitionTypes);
             return
         }
 
+        if (competition.name === "CS2"){
+            if (member2 === '' || email2 === '' || phone2 === '' || cnic2 === '') {
+                alert('Please fill in the required fields')
+                setError({...error, 
+                    member2: member2 === "",
+                    phone2: phone2 === "",
+                    cnic2: cnic2 === "",
+                    email2: email2 === ""
+                });
+                return
+            }
+
+            if (member3 === '' || email3 === '' || phone3 === '' || cnic3 === '') {
+                alert('Please fill in the required fields')
+                setError({...error, 
+                    member3: member3 === "",
+                    phone3: phone3 === "",
+                    cnic3: cnic3 === "",
+                    email3: email3 === ""
+                });
+                return
+            }
+
+            if (member4 === '' || email4 === '' || phone4 === '' || cnic4 === '') {
+                alert('Please fill in the required fields')
+                setError({...error, 
+                    member4: member4 === "",
+                    phone4: phone4 === "",
+                    cnic4: cnic4 === "",
+                    email4: email4 === ""
+                });
+                return
+            }
+
+            if (member5 === '' || email5 === '' || phone5 === '' || cnic5 === '') {
+                alert('Please fill in the required fields')
+                setError({...error, 
+                    member5: member5 === "",
+                    phone5: phone5 === "",
+                    cnic5: cnic5 === "",
+                    email5: email5 === ""
+                });
+                return
+            }
+        }
+
+        if (competition.name === "Scavenger hunt") {
+            if (member2 === '' || email2 === '' || phone2 === '' || cnic2 === '') {
+                alert('Please fill in the required fields')
+                setError({...error, 
+                    member2: member2 === "",
+                    phone2: phone2 === "",
+                    cnic2: cnic2 === "",
+                    email2: email2 === ""
+                });
+                return
+            }
+        }
+
         if (files === null) {
             alert('Please upload a payment receipt')
             setError({...error, file: true})
@@ -387,14 +466,17 @@ console.log(competitionTypes);
         setCnic1((cnic) => cnic.replace(/-/g, ''))
         setCnic2((cnic) => cnic.replace(/-/g, ''))
         setCnic3((cnic) => cnic.replace(/-/g, ''))
+        setCnic4((cnic) => cnic.replace(/-/g, ''))
+        setCnic5((cnic) => cnic.replace(/-/g, ''))
 
-        console.log(cnic1)
         setPhone1((e) => e.replace(/-/g, ''))
         setPhone2((e) => e.replace(/-/g, ''))
         setPhone3((e) => e.replace(/-/g, ''))
+        setPhone4((e) => e.replace(/-/g, ''))
+        setPhone5((e) => e.replace(/-/g, ''))
 
         const participantData = {
-            Competition: competition,
+            Competition: competition.name,
             Competition_type: competitionType,
             Team_Name: teamName,
             Leader_name: member1,
@@ -409,11 +491,20 @@ console.log(competitionTypes);
             mem2_email: email3,
             mem2_whatsapp_number: phone3,
             mem2_cnic: cnic3,
+            mem3_name: member4,
+            mem3_email: email4,
+            mem3_whatsapp_number: phone4,
+            mem3_cnic: cnic4,
+            mem4_name: member5,
+            mem4_email: email5,
+            mem4_whatsapp_number: phone5,
+            mem4_cnic: cnic5,
             reference_code: referenceCode,
             
         }
 
         try {
+            setLoadText("Submitting...");
             const reader = new FileReader()
             reader.readAsDataURL(files)
             reader.onload = async () => {
@@ -432,8 +523,6 @@ console.log(competitionTypes);
                     }
                 )
 
-                console.log(response)
-
                 if (response.ok) {
                     console.log('Submitted successfully:', response)
                     setShowDialog(true)
@@ -441,12 +530,24 @@ console.log(competitionTypes);
                     setMember1('')
                     setMember2('')
                     setMember3('')
+                    setMember4('')
+                    setMember5('')
                     setEmail1('')
                     setEmail2('')
                     setEmail3('')
+                    setEmail4('')
+                    setEmail5('')
+                    setCnic1('')
+                    setCnic2('')
+                    setCnic3('')
+                    setCnic4('')
+                    setCnic5('')
                     setPhone1('')
                     setPhone2('')
                     setPhone3('')
+                    setPhone4('')
+                    setPhone5('')
+                    setReferenceCode('')
                     setCompetition('')
                     setCompetitionType('')
                     setTeamName('')
@@ -457,9 +558,10 @@ console.log(competitionTypes);
                 }
             }
         } catch (error) {
-            console.error('Error submitting form:', error)
+            atert('Error is Submitting form, Please try again')
         } finally {
             setLoading(false)
+            setLoadText("Submit")
             setError({
                 competition: false,
                 competitionType: false,
@@ -468,6 +570,22 @@ console.log(competitionTypes);
                 cnic1: false,	
                 email1: false,
                 phone1: false,
+                member2: false,
+                cnic2: false,
+                email2: false,
+                phone2: false,
+                member3: false,
+                cnic3: false,
+                email3: false,
+                phone3: false,
+                member4: false,
+                cnic4: false,
+                email4: false,
+                phone4: false,
+                member5: false,
+                cnic5: false,
+                email5: false,
+                phone5: false,
                 file: false,
             })
         }
@@ -481,7 +599,7 @@ console.log(competitionTypes);
                     <h1 className="mainh1 text-[#23B6DF] font-extrabold text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-600 sm:mb-8 md:mb-8">
                         REGISTER NOW!
                     </h1>
-                    <div className="scale-65 part2 mt-16 hidden sm:flex md:hidden lg:inline xl:inline 2xl:inline ml-auto">
+                    <div className="part2 ml-[-200px]  mt-16 hidden sm:flex md:hidden lg:block xl:block 2xl:block ml-auto">
                         <img src={Arrow1} alt="" className="" />
                     </div>
                 </div>
@@ -530,7 +648,7 @@ console.log(competitionTypes);
                         </h2>
                         <br />
 
-                        <div className="text-start mt-10 mb-16 md:mb-22 ">
+                        <div className="text-start mt-10 mb-16 md:mb-22 p-5 bg-gray-800 rounded-2xl">
                             {competitionTypes.map((type) => {
                                 return (
                                     <>
@@ -621,8 +739,28 @@ console.log(competitionTypes);
                                 competitionOptions.map((comp) => {
                                     if (comp.name === value) {
                                         setCompetition(comp)
-                                        console.log("settttt")
-                                        console.log(comp)
+                                        if (competition.maxMembers === 1) {
+                                            setTeamNumber(1);
+                                        }
+                                        setTeamNumber(0);
+                                        
+                                        setMember2('')
+                                        setMember3('')
+                                        setMember4('')
+                                        setMember5('')
+                                        setEmail2('')
+                                        setEmail3('')
+                                        setEmail4('')
+                                        setEmail5('')
+                                        setCnic2('')
+                                        setCnic3('')
+                                        setCnic4('')
+                                        setCnic5('')
+                                        setPhone2('')
+                                        setPhone3('')
+                                        setPhone4('')
+                                        setPhone5('')
+
                                         return
                                     }
                                 })
@@ -632,7 +770,7 @@ console.log(competitionTypes);
                             
                             <SelectTrigger
                                 aria-label="Social Media Activity"
-                                className="bg-slate-900 text-white focus:ring-0"
+                                className="bg-gray-800 text-white focus:ring-0"
                             >
                                 <SelectValue
                                     placeholder="Select Competition"
@@ -647,7 +785,7 @@ console.log(competitionTypes);
                                         return (
                                             <SelectItem
                                                 value={comp.name}
-                                                className="hover:bg-gray-800"
+                                                className="hover:bg-slate-900 rounded-2xl b-2"
                                             >
                                                 {comp.name}
                                             </SelectItem>
@@ -718,24 +856,32 @@ console.log(competitionTypes);
                 </div>
             </div>
 
-            <div className='text-white'>
-                <div>
-                    Competition: <div>{competition.name}</div>
-                </div>
+            {
+                competition.minMembers > 0 && (
+                    <div className='text-white m-5 p-5 md:mx-20 lg:mx-48 bg-gray-800 rounded-2xl flex flex-col md:flex-row gap-5 justify-center align-center text-lg gap-5 mb-16'>
+                        <div className='flex flex-col w-full mx-auto ml-5 justify-center '>
+                            <div className='flex gap-2 md:gap-5 text-gray-400 my-auto'>
+                                Competition: <div className='text-white font-bold'>{competition.name}</div>
+                            </div>
+                            <div className='flex gap-2 md:gap-5 text-gray-400 my-auto  '>
+                                Registration Fees: <div className='text-white font-bold'>{competition.price}</div>
+                            </div>
 
-                <div>
-                    Mininum Team members: <div>{competition.minMembers}</div>
-                </div>
+                        </div>
 
-                <div>
-                    Maximum Team members: <div>{competition.maxMembers}</div>
-                </div>
+                        <div className='flex flex-col w-full ml-5 justify-center'>
+                            <div className='flex gap-2 md:gap-5 text-gray-400 mr-auto my-auto'>
+                                Mininum Team members: <div className='text-white font-bold'>{competition.minMembers}</div>
+                            </div>
+                            <div className='flex gap-2 md:gap-5 text-gray-400 mr-auto my-auto'>
+                                Maximum Team members: <div className='text-white font-bold'>{competition.maxMembers}</div>
+                            </div>
 
-                <div>
-                    Registration Fees: <div>{competition.price}</div>
-                </div>
+                        </div>
 
-            </div>
+                    </div>
+                )
+            }
 
             <div className="flex flex-col gap-5 w-[270px] sm:w-[350px] md:w-[400px] lg:w-[65%] mx-auto">
                 <InputBox
@@ -795,7 +941,7 @@ console.log(competitionTypes);
                 </div>
 
                 {
-                    competition.name === "Scavenger hunt" &&
+                    ( competition.name === "Scavenger hunt" || competition.name === "CS2" )&&
                         <div className="flex flex-col gap-5 w-[270px] sm:w-[450px] md:w-[600px] lg:w-[75%] ">
                             <h1 className="text-3xl font-bold text-[#23B6DF]">
                                 Member 2
@@ -841,161 +987,263 @@ console.log(competitionTypes);
                         </div>
                 }
 
-                {competition.maxMembers > 1 &&
-                <div className="mx-auto relative z-10 bg-[#031e2c] ">
-                <h1 className="text-center text-2xl font-bold mb-4 text-[#23B6DF]">
-                    Select Number of Team Members
-                    <span className="text-red-700">{error.competition && ' *'} </span>
-                </h1>
-                <div className=' flex justify-center align-center'>
-                    <div className="mx-6 w-full md:w-[950px] borde relative">
-                        <Select 
-                            className="bg-gray-800 border-none text-white"
+                {
+                    competition.name === "CS2" && 
+                    
+                    <>
+                    <div className="flex flex-col gap-5 w-[270px] sm:w-[450px] md:w-[600px] lg:w-[75%] ">
+                            <h1 className="text-3xl font-bold text-[#23B6DF]">
+                                Member 3
+                            </h1>
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10">
+                                <InputBox
+                                    label="Full Name"
+                                    name="member3"
+                                    type="text"
+                                    value={member3}
+                                    isRequired={true}
+                                    handleChange={handleInput}
+                                    error={error.member3}
+                                />
+                                <InputBox
+                                    label="CNIC Number"
+                                    name="cnic3"
+                                    type="cnic"
+                                    value={cnic3}
+                                    isRequired={true}
+                                    handleChange={handleInput}
+                                    error={error.cnic3}
+                                />
+                                <InputBox
+                                    label="Email Address"
+                                    name="email3"
+                                    type="email"
+                                    value={email3}
+                                    isRequired={true}
+                                    handleChange={handleInput}
+                                    error={error.email3}
+                                />
+                                <InputBox
+                                    label="WhatsApp Number"
+                                    name="phone3"
+                                    type="number"
+                                    value={phone3}
+                                    isRequired={true}
+                                    handleChange={handleInput}
+                                    error={error.phone3}
+                                />
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-5 w-[270px] sm:w-[450px] md:w-[600px] lg:w-[75%] ">
+                            <h1 className="text-3xl font-bold text-[#23B6DF]">
+                                Member 4
+                            </h1>
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10">
+                                <InputBox
+                                    label="Full Name"
+                                    name="member4"
+                                    type="text"
+                                    value={member4}
+                                    isRequired={true}
+                                    handleChange={handleInput}
+                                    error={error.member4}
+                                />
+                                <InputBox
+                                    label="CNIC Number"
+                                    name="cnic4"
+                                    type="cnic"
+                                    value={cnic4}
+                                    isRequired={true}
+                                    handleChange={handleInput}
+                                    error={error.cnic4}
+                                />
+                                <InputBox
+                                    label="Email Address"
+                                    name="email4"
+                                    type="email"
+                                    value={email4}
+                                    isRequired={true}
+                                    handleChange={handleInput}
+                                    error={error.email4}
+                                />
+                                <InputBox
+                                    label="WhatsApp Number"
+                                    name="phone4"
+                                    type="number"
+                                    value={phone4}
+                                    isRequired={true}
+                                    handleChange={handleInput}
+                                    error={error.phone4}
+                                />
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-5 w-[270px] sm:w-[450px] md:w-[600px] lg:w-[75%] ">
+                            <h1 className="text-3xl font-bold text-[#23B6DF]">
+                                Member 5
+                            </h1>
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10">
+                                <InputBox
+                                    label="Full Name"
+                                    name="member5"
+                                    type="text"
+                                    value={member5}
+                                    isRequired={true}
+                                    handleChange={handleInput}
+                                    error={error.member5}
+                                />
+                                <InputBox
+                                    label="CNIC Number"
+                                    name="cnic5"
+                                    type="cnic"
+                                    value={cnic5}
+                                    isRequired={true}
+                                    handleChange={handleInput}
+                                    error={error.cnic5}
+                                />
+                                <InputBox
+                                    label="Email Address"
+                                    name="email5"
+                                    type="email"
+                                    value={email5}
+                                    isRequired={true}
+                                    handleChange={handleInput}
+                                    error={error.email5}
+                                />
+                                <InputBox
+                                    label="WhatsApp Number"
+                                    name="phone5"
+                                    type="number"
+                                    value={phone5}
+                                    isRequired={true}
+                                    handleChange={handleInput}
+                                    error={error.phone5}
+                                />
+                            </div>
+                        </div>
+                    </>
+
+                }
+
+                {competition.maxMembers > 1 && competition.name !== "CS2" && (
+                <div className="mx-auto relative z-10 bg-[#031e2c] w-[100%]">
+                    <h1 className="text-center text-2xl font-bold mb-4 text-[#23B6DF]">
+                        Select Number of Team Members
+                        <span className="text-red-700">{error.competition && ' *'} </span>
+                    </h1>
+                    <div className=' flex justify-center align-center'>
+                        <div className="mx-6 w-full md:w-[950px] relative">
+                            <Select 
+                                className="bg-white border-none text-white"
                                 onValueChange={(value) => {
                                     console.log(parseInt(value))
                                     setTeamNumber(parseInt(value))
-                                }
-                            }    
-                        >
-                            
-                            <SelectTrigger
-                                aria-label="Social Media Activity"
-                                className="bg-slate-900 text-white focus:ring-0"
+                                    if (competition.maxMembers === 1) {
+                                        setTeamNumber(1);
+                                    }
+                                }}
                             >
-                                <SelectValue
-                                    placeholder="Select Competition"
-                                    className="text-white"
-                                />
-                            </SelectTrigger>
-                            <SelectContent className="bg-slate-800 text-white border-0 focus:ring-0">
-                            <SelectGroup>
-                                <SelectLabel>Select Number of Team Members</SelectLabel>
-                                {competition.maxMembers > 1 && (
-                                    // If maxMembers is greater than 1, generate options up to maxMembers
-                                    Array.from({ length: competition.maxMembers - competition.minMembers }, (_, index) => {
-                                        let add = competition.name === "Scavenger hunt" ? 1 : 0;
-                                        const numberOfMembers = competition.minMembers + index - add;
-                                        return (
-                                            <SelectItem
-                                                value={numberOfMembers.toString()}
-                                                className="hover:bg-gray-800"
-                                            >
-                                                {numberOfMembers}
-                                            </SelectItem>
-                                        );
-                                    })
-                                )}
-                            </SelectGroup>
-
-                            </SelectContent>
-                        </Select>
-                        <div className="absolute inset-y-0 end-1 right-2 top-1 flex items-center pointer-events-none">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 41 35"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M20.4485 34.7642L40.0663 0.785213H0.830776L20.4485 34.7642Z"
-                                    fill="white"
-                                />
-                            </svg>
+                                <SelectTrigger
+                                    aria-label="Select number of team members"
+                                    className="bg-gray-800 p-5 text-white focus:ring-0"
+                                >
+                                    <SelectValue
+                                        placeholder="Select number of team members"
+                                        className="text-white"
+                                    />
+                                </SelectTrigger>
+                                <SelectContent className="bg-slate-800 text-white border-0 focus:ring-0">
+                                    <SelectGroup>
+                                        <SelectLabel>Select Number of Team Members</SelectLabel>
+                                        {competition.maxMembers > 1 && (
+                                            // If maxMembers is greater than 1, generate options up to maxMembers
+                                            Array.from({ length: competition.maxMembers - competition.minMembers }, (_, index) => {
+                                                let add = competition.name === "Scavenger hunt" ? 1 : 0;
+                                                const numberOfMembers = competition.minMembers + index - add;
+                                                return (
+                                                    <SelectItem
+                                                        value={numberOfMembers}
+                                                        className="hover:bg-slate-900 "
+                                                    >
+                                                        {numberOfMembers}
+                                                    </SelectItem>
+                                                );
+                                            })
+                                        )}
+                                    </SelectGroup>
+                                </SelectContent>
+                            </Select>
+                            <div className="absolute inset-y-0 end-1 right-5 top-1 flex items-center pointer-events-none">
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 41 35"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M20.4485 34.7642L40.0663 0.785213H0.830776L20.4485 34.7642Z"
+                                        fill="white"
+                                    />
+                                </svg>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-                }
+            )}
 
-                {/* <div className="flex flex-col gap-5 w-[270px] sm:w-[450px] md:w-[600px] lg:w-[75%]">
-                    <h1 className="text-3xl font-bold text-[#23B6DF]">
-                        Member 1
-                    </h1>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10">
-                        <InputBox
-                            label="Full Name"
-                            name="member2"
-                            type="text"
-                            value={member2}
-                            isRequired={false}
-                            handleChange={handleInput}
-                        />
-                        <InputBox
-                            label="CNIC Number"
-                            name="cnic2"
-                            type="cnic"
-                            value={cnic2}
-                            isRequired={false}
-                            handleChange={handleInput}
-                        />
-                        <InputBox
-                            label="Email Address"
-                            name="email2"
-                            type="email"
-                            value={email2}
-                            isRequired={false}
-                            handleChange={handleInput}
-                        />
-                        <InputBox
-                            label="WhatsApp Number"
-                            name="phone2"
-                            type="number"
-                            value={phone2}
-                            isRequired={false}
-                            handleChange={handleInput}
-                        />
-                    </div>
-                </div> */}
-
-                <div className="flex flex-col gap-5 w-[270px] sm:w-[450px] md:w-[600px] lg:w-[75%]">
-                    {Array.from({ length: teamNumber }, (_, index) => {
+            {
+                teamNumber !== 0 && (
+                    <div className="flex flex-col gap-5 w-[270px] sm:w-[450px] md:w-[600px] lg:w-[75%]">
+                        {Array.from({ length: teamNumber }, (_, index) => {
                             let add = competition.name === "Scavenger hunt" ? 2 : 0;
                             const memberIndex = index + 1 + (add);
                             return (
                                 <div className='mb-10'>
                                     <h1 className="text-3xl font-bold text-[#23B6DF] mb-8">
-                                        Member {memberIndex}
+                                        Member {memberIndex + 1}
                                     </h1>
                                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10">
                                         <InputBox
                                             label="Full Name"
-                                            name={`member${memberIndex}`}
+                                            name={`member${memberIndex + 1}`}
                                             type="text"
-                                            value={eval(`member${memberIndex}`)}
-                                            isRequired={true}
+                                            value={eval(`member${memberIndex + 1}`)}
+                                            isRequired={false}
                                             handleChange={handleInput}
                                         />
                                         <InputBox
                                             label="CNIC Number"
-                                            name={`cnic${memberIndex}`}
+                                            name={`cnic${memberIndex + 1}`}
                                             type="cnic"
-                                            value={eval(`cnic${memberIndex}`)}
-                                            isRequired={true}
+                                            value={eval(`cnic${memberIndex + 1}`)}
+                                            isRequired={false}
                                             handleChange={handleInput}
                                         />
                                         <InputBox
                                             label="Email Address"
-                                            name={`email${memberIndex}`}
+                                            name={`email${memberIndex + 1}`}
                                             type="email"
-                                            value={eval(`email${memberIndex}`)}
-                                            isRequired={true}
+                                            value={eval(`email${memberIndex + 1}`)}
+                                            isRequired={false}
                                             handleChange={handleInput}
                                         />
                                         <InputBox
                                             label="WhatsApp Number"
-                                            name={`phone${memberIndex}`}
+                                            name={`phone${memberIndex + 1}`}
                                             type="number"
-                                            value={eval(`phone${memberIndex}`)}
-                                            isRequired={true}
+                                            value={eval(`phone${memberIndex + 1}`)}
+                                            isRequired={false}
                                             handleChange={handleInput}
                                         />
                                     </div>
                                 </div>
                             );
                         })}
-                </div>                                                                         
-
+                    </div>
+                )
+            }
 
                 <div className="flex flex-col md:flex-col gap-5 w-[270px] sm:w-[350px] md:w-[400px] lg:w-[65%] mx-auto">
                     <h4  className='text-gray-400 '>Enter a reference code (if any!)</h4>
@@ -1076,14 +1324,6 @@ console.log(competitionTypes);
                     </CardContent>
                 </Card>
 
-
-                <div className="bg-gray-900 border-gray-700 px-2 rounded-3xl flex justify-center align-center">
-                        <h2 className="mainh1 text-[#23B6DF] mx-auto font-medium text-xl mt-4 text-center sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-4xl text-600 text-balance sm:mb-8 md:mb-8">
-                            PKR. 1199/team for scavanger Hunt <br/>
-                            PKR. 2499/team for CS2 <br />
-                            PKR. 999 for ALL OTHER COMPETITIONS.
-                        </h2>
-                </div>
                 
                 <div className="lg:hidden  mb-2 flex justify-center gap-2 z-0">
                     <div className="">
@@ -1119,6 +1359,13 @@ console.log(competitionTypes);
                     </div>
                 </div>
 
+                <div>
+                                                    <div className='rounded-2xl w-full bg-gray-800 p-3 text-gray-300 flex'>
+                    <div className='text-white mr-6 font-black'>Note:</div>
+                    Free transport will be provided to all the participants. and whoever wants to avail accommodation should mail first at pr@nuceskhi.acm.org . <br/>Accommodation will be paid.
+                </div>
+                </div>
+
                 <div className="grid lg:grid-cols-3 gap-8 w-[300px] md:w-[500px] lg:w-2/3 z-10 mb-5 lg:mb-0">
                     <div className="hidden lg:block col-span-2"></div>
                     <button
@@ -1129,7 +1376,7 @@ console.log(competitionTypes);
                         }`}
                     >
                         <h1 className="text-2xl font-bold">
-                            {loading ? 'Submitting...' : 'SUBMIT'}
+                            {loadText}
                         </h1>
                     </button>
 

@@ -32,7 +32,7 @@ const Competition = () => {
                     initial={{ opacity: 0, x: 100 }}
                     animate={controls}
                 >
-                    <h2 className="text-end text-4xl sm:text-7xl lg:text-[100px] font-black text-[#088097]">
+                    <h2 className="text-end text-4xl sm:text-7xl lg:text-[100px] font-black text-[#23B6DF]">
                         Competitions
                     </h2>
                 </motion.div>

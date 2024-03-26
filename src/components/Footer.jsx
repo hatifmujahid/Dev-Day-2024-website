@@ -7,14 +7,14 @@ import { FaFacebook } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <div>
+      <div className="bg-[#031e2c]">
         {/* <footer className="bg-white-800 text-black ">
        
           <img src={Logo} alt="Logo" />
         </footer> */}
 
         <footer className="">
-          <div className="mx-auto w-full  p-4 py-6 lg:py-8 bg-[#03071C] ">
+          <div className="mx-auto w-full  p-4 py-6 lg:py-8 ">
             <div className="md:flex md:justify-between">
               <div className="mb-6 md:mb-0 ml-9">
               <a href="https://www.acmdevday.com" className="flex items-center md:flex md:justify-center">
@@ -56,9 +56,9 @@ const Footer = () => {
                   </h2>
 
                   <div className="flex flex-wrap m-4">
-                    <a href="https://www.instagram.com/developersday/" className="text-white mx-4 text-2xl"><FaInstagram /></a>
-                    <a href="https://www.linkedin.com/company/developersday/" className="text-white mx-4 text-2xl"><FaLinkedin /></a>
-                    <a href="https://www.facebook.com/DevelopersDay/" className="text-white mx-4 text-2xl"><FaFacebook /></a>
+                    <a href="https://www.instagram.com/developersday/" className="text-white mx-1 lg:mx-4 text-2xl"><FaInstagram /></a>
+                    <a href="https://www.linkedin.com/company/developersday/" className="text-white mx-1 lg:mx-4 text-2xl"><FaLinkedin /></a>
+                    <a href="https://www.facebook.com/DevelopersDay/" className="text-white mx-1 lg:mx-4 text-2xl"><FaFacebook /></a>
                   </div>
                 </div>
               </div>
