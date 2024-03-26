@@ -10,7 +10,7 @@ const CompCard = ({ title, color, description, link }) => {
         if (inView) {
             controls.start({
                 opacity: 1,
-                x: 0,
+                y: 0,
                 transition: { duration: 0.3 }
             });
         }
@@ -28,7 +28,7 @@ const CompCard = ({ title, color, description, link }) => {
   return (
     <motion.div
     ref={ref}
-    initial={{ opacity: 0, x: -100 }}
+    initial={{ opacity: 0, y: -100 }}
     animate={controls}
 >
     <div
