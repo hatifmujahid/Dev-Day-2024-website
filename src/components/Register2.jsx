@@ -1145,11 +1145,11 @@ console.log(competitionTypes);
                                 }}
                             >
                                 <SelectTrigger
-                                    aria-label="Select number team members"
+                                    aria-label="Select number of team members"
                                     className="bg-gray-800 p-5 text-white focus:ring-0"
                                 >
                                     <SelectValue
-                                        placeholder="Select number team members"
+                                        placeholder="Select number of team members"
                                         className="text-white"
                                     />
                                 </SelectTrigger>
