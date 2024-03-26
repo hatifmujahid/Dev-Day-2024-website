@@ -633,9 +633,8 @@ console.log(competitionTypes);
                             </div>
 
                             <p className="p-4 text-center text-white">
-                                Select the department of competitions you wish
-                                to participate in, for more information click
-                                here!
+                                Select the type of competitions you wish
+                                to participate in!
                             </p>
                         </div>
                     </div>
