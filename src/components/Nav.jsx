@@ -63,7 +63,7 @@ const Navbar = () => {
                 {navItems.map((item) => (
                     <li
                         key={item.id}
-                        className={item.text !== "ChatBot" ? "text-white text-xl hover:underline p-2 mx-4 cursor-pointer" : "rounded-xl border-b border-[#23B6DF] px-4 text-white text-xl p-2 mx-4 cursor-pointer hover:bg-gradient-to-r hover:from-[#23B6DF] hover:to-[#088097]"}
+                        className={item.text !== "ChatBot" ? "text-white text-xl border-b-0 hover:border-b-2 hover:text-[#23B6DF] duration-200 ease-in delay-75 p-2 mx-4 cursor-pointer" : "rounded-xl border-b border-[#23B6DF] px-4 text-white text-xl p-2 mx-4 cursor-pointer hover:bg-gradient-to-r hover:from-[#23B6DF] hover:to-[#088097]"}
                     >
                         <a href={item.href}>{item.text}</a>
                     </li>
