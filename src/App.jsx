@@ -27,7 +27,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         {/* <Route path="/about" element={<About />} /> */}
         <Route path="/" element={<HomeHero />} />
-        <Route path="/*" element={<ComingSoon />} />
+        {/* <Route path="/*" element={<ComingSoon />} /> */}
         
       </Routes>
     </Router>
