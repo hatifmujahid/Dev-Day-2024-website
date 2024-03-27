@@ -277,7 +277,7 @@ const Ambassador = () => {
                 }
 
                 const response = await fetch(
-                    'https://devdayeserver.vercel.app/addAmbassador',
+                    'https://api.acmdevday.com/addAmbassador',
                     {
                         method: 'POST',
                         headers: {
