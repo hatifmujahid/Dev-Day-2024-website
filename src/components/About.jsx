@@ -18,7 +18,17 @@ import abubakar from "../assets/Excom/Abubakar Corporate Affairs.jpg";
 import sareem from "../assets/Excom/Sareem_Branding.jpg";
 import muaz from "../assets/Excom/Muaaz_SOP_Head.jpg"
 
+import mehdi from "../assets/CoreTeam/mehdi.jpeg"
+import ayan from "../assets/CoreTeam/ayan.jpeg"
+import hadi from "../assets/CoreTeam/hadi.jpeg"
+import eisha from "../assets/CoreTeam/eisha.jpeg"
+import sarosh from "../assets/CoreTeam/sarosh.jpeg"
+import talal from "../assets/CoreTeam/talal.jpeg"
+import raza from "../assets/CoreTeam/raza.jpeg"
+import tanees from "../assets/CoreTeam/tanees.jpeg"
 import CoreCard from "../components/About/CoreCard";
+
+
 const About = () => {
   const ExcomData = [
     {
@@ -73,6 +83,49 @@ const About = () => {
       name : "Muaaz Mohsin"
     },
   ]
+
+  const CoreTeamData = [
+    {
+      imgUrl : mehdi,
+      title : "Director Core Team",
+      name : "Syed Mehdi Raza"
+    },
+    {
+      imgUrl : ayan,
+      title : "Director - External Affairs",
+      name : "Aayaan Khurram"
+    },
+    {
+      imgUrl : hadi,
+      title : "Mentor Event Management",
+      name : "Hadi Babar"
+    },
+    {
+      imgUrl : eisha,
+      title : "Mentor Marketing",
+      name : "Eisha Shah"
+    },
+    {
+      imgUrl : sarosh,
+      title : "Mentor Event Admin",
+      name : "Sarosh Jawed"
+    },
+    {
+      imgUrl : talal,
+      title : "Director Photography",
+      name : "Talal"
+    },
+    {
+      imgUrl : raza,
+      title : "Mentor Guest Relations",
+      name : "Raza Ali Abidi"
+    },
+    {
+      imgUrl : tanees,
+      title : "Director Internal Affairs",
+      name : "Syed Tanees"
+    },
+  ]
   return (
     <div className="bg-[#031e2c]">
       <Nav />
@@ -118,7 +171,7 @@ const About = () => {
         </div>
 
         {/* space for excom member cards */}
-        <div className="m-4 flex flex-wrap gap-10 lg:gap-16 mx-auto justify-center border">
+        <div className="m-4 flex flex-wrap gap-10 lg:gap-16 mx-auto justify-center">
           {ExcomData.map((data) => {
             return (
               <ExcomCard imgUrl={data.imgUrl} title={data.title} name={data.name}/>
@@ -141,8 +194,8 @@ const About = () => {
         </div>
         {/* space for core member cards */}
 
-        <div className="m-4 flex flex-wrap gap-3 md:gap-10 mx-auto justify-center">
-          {ExcomData.map((data) => {
+        <div className="m-4 mt-20 flex flex-wrap gap-3 md:gap-10 mx-auto justify-center">
+          {CoreTeamData.map((data) => {
             return (
               <CoreCard imgUrl={data.imgUrl} title={data.title} name={data.name}/>
             )

@@ -69,7 +69,7 @@ const ExComCard = ({ imgUrl, title, name }) => {
 
             md:text-xl md:pb-2
 
-            lg:text-3xl lg:pb-4
+            lg:text-lg lg:pb-4
           `}
         >
           {title}
