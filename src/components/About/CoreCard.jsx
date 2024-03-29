@@ -67,7 +67,7 @@ const ExComCard = ({ imgUrl, title, name }) => {
           className={`
             text-sm text-white font-normal
 
-            md:text-xl md:pb-2
+            md:text-lg md:pb-2
 
             lg:text-lg lg:pb-4
           `}
