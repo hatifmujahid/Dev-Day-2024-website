@@ -159,16 +159,14 @@ const About = () => {
         </div>
       </div>
 
-      <div className="m-32">
-        <h1 className="mainh1 font-extrabold text-xl text-center lg:text-left lg:text-5xl">Welcoming the quintessential Executive Committee of ACM NUCES for the tenure of 2023-2024.</h1>
-      </div>
+     
         {/* 2nd hero-section */}
 
         <div className="inline-block lg:flex lg:justify-evenly lg:align-center mt-28">
           <img src={Image2} alt="" className="mx-auto lg:mx-0" />
           <div className="w-full lg:w-2/5">
                 <h1 className="mainh1 font-extrabold text-6xl mb-8 text-center lg:text-left mt-20 lg:mt-0 lg:text-7xl">EX-COM</h1>
-                <p className="text-white font-semibold m-5 text-lg text-left lg:text-lg xl:text-lg">Leadership is an action it's no position. Those in action lead the way towards success, having zestful and dynamic leaders who know how to accelerate their way up in their game; and not only this, they know how to trump together. Welcoming the quintessential Extended Executive Committee of ACM NUCES for the tenure of 2023-2024. We hope they touch new horizons and leave the remarkable footprints for others to follow.</p>
+                <p className="text-white font-semibold m-5 text-lg text-left lg:text-lg xl:text-lg">Leadership is an action it's no position. Those in action lead the way towards success, having zestful and dynamic leaders who know how to accelerate their way up in their game; and not only this, they know how to trump together. Welcoming the quintessential Executive Committee of ACM NUCES for the tenure of 2023-2024. We hope they touch new horizons and leave the remarkable footprints for others to follow.</p>
             </div>
         </div>
 
