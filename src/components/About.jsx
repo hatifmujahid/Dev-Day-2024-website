@@ -159,7 +159,9 @@ const About = () => {
         </div>
       </div>
 
-
+      <div className="m-32">
+        <h1 className="mainh1 font-extrabold text-xl text-center lg:text-left lg:text-5xl">Welcoming the quintessential Executive Committee of ACM NUCES for the tenure of 2023-2024.</h1>
+      </div>
         {/* 2nd hero-section */}
 
         <div className="inline-block lg:flex lg:justify-evenly lg:align-center mt-28">
@@ -204,13 +206,13 @@ const About = () => {
         
 
         {/* 4th hero-section */}
-        <div className="inline-block lg:flex lg:justify-evenly lg:align-center mt-28">
+        {/* <div className="inline-block lg:flex lg:justify-evenly lg:align-center mt-28">
           <div className="w-full lg:w-2/5">
                 <h1 className="mainh1 font-extrabold text-6xl text-600 mb-8 text-center lg:text-left mt-20 lg:mt-0 lg:text-7xl">EXTENDED EX-COM</h1>
                 <p className="text-white font-semibold text-lg m-5 lg:text-lg xl:text-lg">In the dynamic world of ACM DevDay, the Extended Executive Committee (2023-2024) embodies proactive leadership and effective collaboration. As trailblazers in their fields, their transformative influence promises a lasting legacy, inspiring excellence in others. Cheers to an exceptional tenure!</p>
             </div>
             <img src={Image4} alt="" className="mx-auto mt-24 lg:mt-0 lg:mx-0" />
-        </div>
+        </div> */}
         {/* space for extended excom member cards */}
 
 
