@@ -22,8 +22,8 @@ const CsComp = () => {
 
   const csCompetitions = [
     'Capture The Flag',
-    'Speed Programming',
-    'Database Design',
+    'Competitive Programming',
+    'Query Quest',
     'Code in the Dark',
     'PsuedoWar',
     'Speed Debugging',
@@ -33,6 +33,7 @@ const CsComp = () => {
     'Data Science',
     'App Development',
     'SyncOS',
+    'Code Sprint'
 ]
 
 
@@ -44,13 +45,13 @@ const compData = [
     color: "#FFA500"
   },
   {
-    title: "Speed Programming",
+    title: "Competitive Programming",
     description: "Participants solve algorithmic problems as quickly as possible, aiming to complete as many as they can in the shortest time.",
     link: "https://www.google.com",
     color: "#FF0000"
   },
   {
-    title: "Database Design",
+    title: "Query Quest",
     description: "Creating a detailed data model of a database, including logical and physical design choices and storage parameters.",
     link: "https://www.google.com",
     color: "#FFD700"
@@ -108,7 +109,13 @@ const compData = [
     description: "Participants develop operating systems or system-level software, focusing on efficiency, reliability, and performance.",
     link: "https://www.google.com",
     color: "#1E90FF"
-  }
+  },
+  {
+    title: "Code Sprint",
+    description: "Easier algortihmic problems are solved by participants, within a given timeframe. Fastest with most points wins!",
+    link: "https://www.google.com",
+    color: "#4682B4"
+  },
 ];
 
 
