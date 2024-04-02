@@ -52,7 +52,7 @@ const compData = [
   },
   {
     title: "Query Quest",
-    description: "Creating a detailed data model of a database, including logical and physical design choices and storage parameters.",
+    description: "From basic retrieval to complex tasks, every second counts. Enhance your skills, engage in friendly competition, and gain real-world database experience. ",
     link: "https://www.google.com",
     color: "#FFD700"
   },
