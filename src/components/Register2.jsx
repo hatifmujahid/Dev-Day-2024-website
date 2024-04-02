@@ -398,7 +398,7 @@ console.log(competitionTypes);
             return
         }
 
-        if (competition.name === "CS2"){
+        if (competition.name === "Counter-Strike 2 (CS2)"){
             if (member2 === '' || email2 === '' || phone2 === '' || cnic2 === '') {
                 alert('Please fill in the required fields')
                 setError({...error, 
@@ -940,7 +940,7 @@ console.log(competitionTypes);
                 </div>
 
                 {
-                    ( competition.name === "Scavenger hunt" || competition.name === "CS2" )&&
+                    ( competition.name === "Scavenger hunt" || competition.name === "Counter-Strike 2 (CS2)" )&&
                         <div className="flex flex-col gap-5 w-[270px] sm:w-[450px] md:w-[600px] lg:w-[75%] ">
                             <h1 className="text-3xl font-bold text-[#23B6DF]">
                                 Member 2
@@ -987,7 +987,7 @@ console.log(competitionTypes);
                 }
 
                 {
-                    competition.name === "CS2" && 
+                    competition.name === "Counter-Strike 2 (CS2)" && 
                     
                     <>
                     <div className="flex flex-col gap-5 w-[270px] sm:w-[450px] md:w-[600px] lg:w-[75%] ">
@@ -1125,7 +1125,7 @@ console.log(competitionTypes);
 
                 }
 
-                {competition.maxMembers > 1 && competition.name !== "CS2" && (
+                {competition.maxMembers > 1 && competition.name !== "Counter-Strike 2 (CS2)" && (
                 <div className="mx-auto relative z-10 bg-[#031e2c] w-[100%]">
                     <h1 className="text-center text-2xl font-bold mb-4 text-[#23B6DF]">
                         Select Number of Team Members
