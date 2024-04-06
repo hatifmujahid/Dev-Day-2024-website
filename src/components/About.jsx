@@ -21,7 +21,7 @@ import muaz from "../assets/Excom/Muaaz_SOP_Head.jpg"
 import mehdi from "../assets/CoreTeam/mehdi.jpeg"
 import ayan from "../assets/CoreTeam/ayan.jpeg"
 import hadi from "../assets/CoreTeam/hadi.jpeg"
-import eisha from "../assets/CoreTeam/eisha.jpeg"
+// import eisha from "../assets/CoreTeam/eisha.jpeg"
 import sarosh from "../assets/CoreTeam/sarosh.jpeg"
 import talal from "../assets/CoreTeam/talal.jpeg"
 import raza from "../assets/CoreTeam/raza.jpeg"
@@ -100,11 +100,11 @@ const About = () => {
       title : "Mentor Event Management",
       name : "Hadi Babar"
     },
-    {
-      imgUrl : eisha,
-      title : "Mentor Marketing",
-      name : "Eisha Shah"
-    },
+    // {
+    //   imgUrl : eisha,
+    //   title : "Mentor Marketing",
+    //   name : "Eisha Shah"
+    // },
     {
       imgUrl : sarosh,
       title : "Mentor Event Admin",
