@@ -65,7 +65,7 @@ const PaymentInfo = () => {
 
     const info = {
         title: "Muhammad Shahmir Raza",
-        number: 03188409943",
+        number: "03188409943",
         // iban: "PK94FAYS0169007900161339",
         // bcode: "169",
         bank_name: "Nayapay",
