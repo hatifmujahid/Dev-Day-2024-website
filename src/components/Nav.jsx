@@ -45,7 +45,8 @@ const Navbar = () => {
         { id: 1, text: 'Home', href: '/' },
         { id: 2, text: 'About Us', href: '/about' },
         { id: 3, text: 'Register', href: '/register' },
-        {id: 4, text: 'ChatBot', href: '/'}
+        {id: 4, text: 'ChatBot', href: '/'},
+        {id: 5, text: 'FYPXtreme', href: 'https://fypxtreme.acmdevday.com'},
     ]
 
     return (
