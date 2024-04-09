@@ -14,7 +14,7 @@ const FypExtreme = () => {
 
           <h2 className="text-2xl md:text-4xl mx-5 text-center text-white font-bold mt-8">FYP Extreme happening for the first time ever in Fast Nuces</h2>
 
-           <h2 className="text-2xl md:text-4xl mx-5 text-center text-white font-bold mt-8">Showcase your FYP and win  upto <span className="text-3xl md:text-5xl font-black text-[#23B6DF]">200K PKR</span></h2>
+           <h2 className="text-2xl md:text-4xl mx-5 text-center text-white font-bold mt-8">Showcase your FYP and win  upto <span className="text-3xl md:text-5xl font-black text-[#23B6DF]">100K PKR</span></h2>
         </div>
       </div>
     </div>
